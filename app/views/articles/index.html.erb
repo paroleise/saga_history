@@ -1,0 +1,11 @@
+<h1 class="mt-5 text-center">さがん歴史地図</h1>
+<p class="mt-5 text-center pt-5">古今東西の佐賀を知る、歴史できごとマップ</p>
+
+<% @articles.each do |article| %>
+<div>
+	<h2><%= article.title %></h2>
+	<p><%= article.content %></p>
+</div>
+<% end %>
+
+<%= link_to "記事を書く", new_article_path %>
