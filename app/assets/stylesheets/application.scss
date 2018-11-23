@@ -12,6 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require quill.snow
  */
 
 @import "bootstrap";
+
+//テキストエリア内部の装飾はここ
+.ql-container.ql-snow {
+  height: 50vh;
+}
