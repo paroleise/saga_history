@@ -1,0 +1,2 @@
+class Mochi < ApplicationRecord
+end

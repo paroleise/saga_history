@@ -17,5 +17,24 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require activestorage
+//= require quill.global
 //= require_tree .
 //= require popper
+
+var defaults = {
+        theme: 'snow',
+        modules: {
+            toolbar: [
+                [{ 'header': [1, 2, false] }],
+                [{ 'color': [] }, { 'background': [] }],
+                ['bold', 'italic', 'underline', 'strike'],
+                ['blockquote', 'code-block'],
+                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                ['clean'],
+                ['link'],
+                ['image']
+            ]
+        },
+        placeholder: '記事を入力してください',
+    };
+Quilljs.setDefaults(defaults)

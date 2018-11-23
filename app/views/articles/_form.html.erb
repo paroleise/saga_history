@@ -1,0 +1,5 @@
+<%= simple_form_for @article, html: { class: 'mt-5' } do |f| %>
+  <%= f.input :title %>
+  <%= f.text_field :content, class: "quill_container" %> <!--quill_containerってクラスは消さないように-->
+  <%= f.button :submit, class: 'btn-primary mt-4' %>
+<% end %>
