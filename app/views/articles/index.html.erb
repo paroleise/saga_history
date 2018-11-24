@@ -9,6 +9,10 @@
 <% @articles.each do |article| %>
 <div><!--ここで一つ一つの記事を出力-->
 	<h2><%= article.title %></h2>
+	<p><%= t("article.region.#{article.region}") %></p>
+	<p><%= t("article.category.#{article.category}") %></p>
+	<p><%= t("article.division.#{article.division}") %></p>
+	<p><%= article.year %></p>
 	<p><%== article.content %></p>
 	<% if session[:mochi_id] %>
 		<p>

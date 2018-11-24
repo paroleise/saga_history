@@ -205,3 +205,31 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  article:
+    region:
+      saga: 佐賀地区
+      sanshin: 三神地区
+      kito: 杵藤地区
+      karamatsu: 唐松地区
+      isai: 伊西地区
+    category:
+      government: 政治
+      economy: 経済
+      technology: 技術
+      culture: 文化・芸術
+      religion: 宗教・祭事
+    division:
+      jomon: 縄文
+      yayoi: 弥生
+      kofun: 古墳
+      asuka: 飛鳥・奈良
+      heian: 平安
+      kamakura: 鎌倉
+      muromachi: 室町
+      azuchi: 安土桃山
+      edofirst: 江戸[前半]
+      edolast: 江戸[後半]
+      meiji: 明治
+      taisho: 大正
+      showa: 昭和
+      heisei: 平成

@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   protect_from_forgery except: :authorize
 
   def index
-  	@articles = Article.all
+  	@articles = Article.all.where(hidden: false)
   end
 
   def new
@@ -70,7 +70,9 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(
+      :title, :category, :region, :division, :year, :hidden, :content
+    )
   end
 
   def request_password
