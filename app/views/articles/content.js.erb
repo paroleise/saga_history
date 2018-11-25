@@ -1,2 +1,1 @@
-$('#articleBody').html("<%= j (render 'content') %>");
-//$('#articleBody').slideDown(350);
+$("#content-<%= @division %>").html("<%= j(render partial: 'articles/content', locals: { article: @article }) %>");

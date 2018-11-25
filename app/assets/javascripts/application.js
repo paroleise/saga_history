@@ -21,6 +21,9 @@
 //= require_tree .
 //= require popper
 
+
+
+//wysiwyg設定
 var defaults = {
         theme: 'snow',
         modules: {
