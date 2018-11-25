@@ -1,0 +1,50 @@
+//タグで色やポイントの座標が変わるからここで初期化する
+@import "variable";
+
+//浮かすやつ
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+
+//背景色
+.background_odd {
+  background-color: $odd;
+}
+.background_even {
+  background-color: $even;
+}
+
+//カテゴリ区分
+.government {
+  background-color: $government;
+}
+.economy {
+  background-color: $economy
+}
+.technology {
+  background-color: $technology;
+}
+.culture {
+  background-color: $culture;
+}
+.religion {
+  background-color: $religion;
+}
+.title-government {
+  color: $government;
+}
+.title-economy {
+  color: $economy
+}
+.title-technology {
+  color: $technology;
+}
+.title-culture {
+  color: $culture;
+}
+.title-religion {
+  color: $religion;
+}

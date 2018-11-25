@@ -1,25 +1,33 @@
-<% if session[:mochi_id] %>
-☆<br>
-<%= link_to "ログアウト", logout_path, method: :post %>
-<% end %>
-<%= link_to "記事を書く", new_article_path %>
-<h1 class="mt-5 text-center">さがん歴史地図</h1>
-<p class="mt-5 text-center pt-5">古今東西の佐賀を知る、歴史できごとマップ</p>
 
-<% @articles.each do |article| %>
-<div><!--ここで一つ一つの記事を出力-->
-	<h2><%= article.title %></h2>
-	<p><%= t("article.region.#{article.region}") %></p>
-	<p><%= t("article.category.#{article.category}") %></p>
-	<p><%= t("article.division.#{article.division}") %></p>
-	<p><%= article.year %></p>
-	<p><%== article.content %></p>
-	<% if session[:mochi_id] %>
-		<p>
-			<%= link_to "編集", edit_article_path(article) %>
-			<%= link_to "削除", article_path(article), method: "delete", data: {confirm: "削除しますか？"} %>
-		</p>
-	<% end %>
-</div>
-<hr />
+<% @articles.each_with_index do |article, i| %>
+
+	<div class="<%= i % 2 != 0 ? "background_even" : "background_odd"%>">
+
+		<div class="container-fluid row article">
+
+				<div class="col-lg-3 col-md-6">
+					<div class="map rel">
+						<%= image_tag("/img/map.svg", class: "gio abs") %>
+					</div>
+					<ul style="margin-top: 300px; margin-left: 50px; position:relative;z-index:600;">
+						<li><%= link_to t("article.region.saga"), content_path, method: :post ,remote: true %></li>
+						<li><%= link_to t("article.region.sanshin"), content_path, method: :post ,remote: true %></li>
+					</ul>
+				</div>
+
+				<div class="col-2 mr-3 pt-5 mt-5">
+
+							<b><%= t("article.division.#{article.division}") %></b>
+				</div>
+
+				<div class="col-6 rel">
+
+						<%= render 'content', article: article %>
+				</div>
+
+		</div>
+
+	</div>
+
+
 <% end %>

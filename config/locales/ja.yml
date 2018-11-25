@@ -216,20 +216,20 @@ ja:
       government: 政治
       economy: 経済
       technology: 技術
-      culture: 文化・芸術
-      religion: 宗教・祭事
+      culture: 文化
+      religion: 宗教
     division:
-      jomon: 縄文
-      yayoi: 弥生
-      kofun: 古墳
-      asuka: 飛鳥・奈良
-      heian: 平安
-      kamakura: 鎌倉
-      muromachi: 室町
-      azuchi: 安土桃山
-      edofirst: 江戸[前半]
-      edolast: 江戸[後半]
-      meiji: 明治
-      taisho: 大正
-      showa: 昭和
+      jomon: 縄文時代
+      yayoi: 弥生時代
+      kofun: 古墳時代
+      asuka: 飛鳥・奈良時代
+      heian: 平安時代
+      kamakura: 鎌倉時代
+      muromachi: 室町時代
+      azuchi: 安土桃山時代
+      edofirst: 江戸時代[前半]
+      edolast: 江戸時代[後半]
+      meiji: 明治時代
+      taisho: 大正時代
+      showa: 昭和時代
       heisei: 平成

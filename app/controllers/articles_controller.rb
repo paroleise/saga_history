@@ -1,10 +1,16 @@
 class ArticlesController < ApplicationController
-  before_action :request_password, only: [:new]
+  before_action :request_password, only: [:new, :list, :edit]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   protect_from_forgery except: :authorize
 
+
+
   def index
-  	@articles = Article.all.where(hidden: false)
+  	@articles = Article.all.where(hidden: 0)
+  end
+
+  def list
+    @articles = Article.all.order(created_at: :desc)
   end
 
   def new
@@ -14,7 +20,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to :root, notice: "記事を投稿しました"
+      redirect_to articles_root_path, notice: "記事を投稿しました"
     else
       render("articles/new")
     end
@@ -26,7 +32,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to :root, notice: "記事を編集しますた"
+      redirect_to articles_root_path, notice: "記事を編集しますた"
     else
       render 'edit'
     end
@@ -34,11 +40,21 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to :root
+    redirect_to list_path
   end
 
   def show
   end
+
+=begin
+  def content #地区がクリックされたときに部分テンプレートを非同期通信で書き換え
+    article = Article.find_by(division: "jomon", region: "saga")
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+=end
 
 
   #ログイン関係
@@ -50,7 +66,7 @@ class ArticlesController < ApplicationController
       @current_user = Mochi.new
       @current_user.save
       session[:mochi_id] = @current_user.id
-      redirect_to :root
+      redirect_to :list
     else
       render 'authorization'
     end
