@@ -1,13 +1,13 @@
-<div id="articleBody" class="article-body rel">
-  <span class="article-year"><%= article.year %></span>
-  <span class="<%= article.category %> text-white"><%= t("article.category.#{article.category}") %></span>
-  <h2 class="title-<%= article.category %>"><%= article.title %></h2>
-  <%= t("article.region.#{article.region}") %>
-  <div class="article-content">
-    <%== article.content %>
-  </div>
+<div class="article-body rel">
+  <% if article %>
+    <span class="article-year"><%= article.year %></span>
+    <span class="<%= article.category %> text-white"><%= t("article.category.#{article.category}") %></span>
+    <h2 class="title-<%= article.category %>"><%= article.title %></h2>
+    <%= t("article.region.#{article.region}") %>
+    <div class="article-content">
+      <%== article.content %>
+    </div>
+  <% end %>
 </div>
 
-<div class="shadow abs">
-
-</div>
+<div class="shadow abs"></div>

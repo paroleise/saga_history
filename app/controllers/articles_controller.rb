@@ -3,10 +3,14 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   protect_from_forgery except: :authorize
 
-
-
   def index
+    @divisions = ["jomon", "yayoi", "kofun", "asuka", "heian", "kamakura", "muromachi", "azuchi", "edofirst", "edolast", "meiji", "taisho", "showa", "heisei"]
   	@articles = Article.all.where(hidden: 0)
+  end
+
+  def content
+    @division = params[:division]
+    @article = Article.where(region: params[:region], division: params[:division]).order(created_at: :desc).last
   end
 
   def list
@@ -43,18 +47,8 @@ class ArticlesController < ApplicationController
     redirect_to list_path
   end
 
-  def show
-  end
 
-=begin
-  def content #地区がクリックされたときに部分テンプレートを非同期通信で書き換え
-    article = Article.find_by(division: "jomon", region: "saga")
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
-=end
+
 
 
   #ログイン関係
