@@ -16,8 +16,71 @@
  */
 
 @import "bootstrap";
-//テキストエリア内部の装飾はここ
-.ql-container.ql-snow {
-  margin-bottom: 25px;
-  height: 50vh;
+@import "variable";
+
+.container {
+  padding-top: 3.47rem;
+}
+//ヘッダ
+header {
+  height: 3.47rem;
+  width: 100%;
+  background-color: $white;
+  border-bottom: solid 3px #000;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  div {
+    padding-top: 1rem;
+    display: flex;
+  	justify-content: space-between;
+    font-weight: bold;
+    nav a{
+        padding: .3rem;
+        color: $black; //TODO:: hoverの動作
+    }
+    &:last-child a{
+      padding: .3rem 1rem;
+    }
+  }
+}
+
+
+//index
+.article {
+  height: 100vh;
+}
+
+
+.article-year {
+  background: $white;
+  border: solid 3px $black;
+}
+
+.gio {
+  //背景がでかすぎて相対化できないのがまずい。レスポンシブで即死すると思われる
+  width: 1065px;
+  left: -67px;
+  top: -5vh;
+}
+
+
+.article-body {
+  border: solid 3px $black;
+  height: 70vh;
+  margin-top: 12vh;
+  overflow: scroll;
+  background: $white;
+  z-index: 100;
+}
+
+.shadow {
+  width: 97%;
+  background: $white;
+  border: solid 3px $black;
+  height: 70vh;
+  z-index: 1;
+  top: 13.5%;
+  left: 5%;
 }

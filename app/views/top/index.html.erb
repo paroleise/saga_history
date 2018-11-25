@@ -1,1 +1,364 @@
-<h2>mochi's thesis</h2>
+<!--まんまコピペなので特にいじってないです-->
+
+<style>
+  .main{
+    position: relative;
+    top: 10px;
+    left: 0;
+    background-color: #f2eddf;
+    width: 100%;
+    height: 700px;
+  }
+
+
+  .background{
+    width: 100%;  /* トリミングしたい幅 */
+    height: 700px;  /* トリミングしたい高さ */
+    overflow: hidden;
+    position: relative;
+
+  }
+
+  img .background {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: scale(3) translate(-10%, -40);
+  }
+
+
+  .title{
+    position:absolute;
+    top: 60px;
+    left:0;
+    right:0;
+    margin: auto;
+    width: 58%;
+    z-index: 2;
+  }
+
+  .subtitle{
+    position: absolute;
+    top: 370px;
+    left:0;
+    right:0;
+    z-index: 4;
+    margin: auto;
+    font-size: 17px;
+    line-height: 0px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 3px solid #000;
+    width: 30%;
+  }
+
+  .all_botton{
+    position: absolute;
+    top: 400px;
+    left:0;
+    right:0;
+    z-index: 4;
+    margin: auto;
+    font-size: 15px;
+    height: 40px;
+    width: 180px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+    line-height: 40px;
+    vertical-align: middle;
+    letter-spacing: 0.07em;
+  }
+
+  #all{
+    width: 180px;
+    height: 40px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .category_wrapper{
+    position: absolute;
+    top: 465px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 5;
+    text-align: center;
+  }
+
+  .category{
+    width: 41%;
+    margin: 0 20px;
+    z-index: 5;
+    display: inline-block
+  }
+
+
+  .category_genre{
+    position: relative;
+  }
+
+  .category_district{
+    position: relative;
+  }
+
+  .category_title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+  }
+
+
+  /*種類で分ける*/
+
+
+  .genres{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+
+  }
+
+  .genre_wrapper{
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    width: 13%;
+    margin: 0.6%;
+  }
+
+
+  .genre{
+    position: relative;
+  }
+
+  .genre a{
+    position: absolute;
+    top: 24px;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .genre_1{
+    color: #d43a52;
+  }
+
+  .genre_2{
+    color: #817cc0;
+  }
+
+  .genre_3{
+    color: #ff6c30;
+  }
+
+  .genre_4{
+    color: #429ade;
+  }
+
+  .genre_5{
+    color: #c6d443;
+  }
+
+  .genre_6{
+    color: #30c0a9;
+  }
+
+
+  /*地域で分ける*/
+
+
+  .districts{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+
+  }
+
+  .district_wrapper{
+    display: inline-block;
+    text-align: center;
+    width: 15%;
+    margin: 1%;
+  }
+
+
+  .district{
+    position: relative;
+  }
+
+  .district a{
+    position: absolute;
+    top: 5px;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .district_list{
+    position: absolute;
+    top: 35px;
+    left: 0;
+    right: 0;
+    font-weight: normal;
+    font-size: 11px;
+    padding: 0;
+  }
+
+  .district_list li{
+    line-height: 15px;
+    text-align: center;
+    padding: 0;
+  }
+
+
+
+  footer{
+    height: 30px;
+    width: 100%;
+    float: left;
+    background-color: white;
+    padding: 0 15px;
+  }
+
+
+  .copyright{
+    font-size: 10px;
+    line-height: 30px;
+    text-align: middle;
+
+  }
+
+</style>
+    <div class="main">
+    	<div class="background"><img src="img/map.svg"></div>
+
+    	<div class="title"><img src="img/top_title.svg"></div>
+    	<div class="subtitle">
+    		<p>古今東西の佐賀を知る、歴史できごとマップ</p>
+    	</div>
+    	<div class="all_botton">
+        <%= link_to "全体で見る▶︎", articles_root_path, style: "color: white" %>
+    	</div>
+
+
+    	<div class="category_wrapper">
+    		<div class="category">
+    			<div class="category_genre">
+    				<a class="category_title">できごとの分類でみる</a>
+    				<img src="img/top_category.svg">
+    				<div class="genres">
+    					<div class="genre_wrapper">
+    						<div class="genre_1 genre">
+    						<img src="img/top_g_1.svg">
+    						<a class="genre_title">政治</a>
+    						</div>
+    					</div>
+    					<div class="genre_wrapper">
+    						<div class="genre_2 genre">
+    						<img src="img/top_g_2.svg">
+    						<a class="genre_title">経済</a>
+    						</div>
+    					</div>
+    					<div class="genre_wrapper">
+    						<div class="genre_3 genre">
+    						<img src="img/top_g_3.svg">
+    						<a class="genre_title">争乱</a>
+    						</div>
+    					</div>
+    					<div class="genre_wrapper">
+    						<div class="genre_4 genre">
+    						<img src="img/top_g_4.svg">
+    						<a class="genre_title">技術</a>
+    						</div>
+    					</div>
+    					<div class="genre_wrapper">
+    						<div class="genre_5 genre">
+    						<img src="img/top_g_5.svg">
+    						<a class="genre_title">文化</a>
+    						</div>
+    					</div>
+    					<div class="genre_wrapper">
+    						<div class="genre_6 genre">
+    						<img src="img/top_g_6.svg">
+    						<a class="genre_title">宗教</a>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="category">
+	 		  	<div class="category_district">
+	 		  		<a class="category_title">地区別でみる</a>
+	 		  		<img src="img/top_category.svg">
+	 		  		<div class="districts">
+    					<div class="district_wrapper">
+    						<div class="district">
+    						<img src="img/top_district.svg">
+    						<a class="genre_title">佐城地区</a>
+    						<ul class="district_list">
+    							<li>佐賀市</li>
+    							<li>小城市</li>
+    							<li>多久市</li>
+    						</div>
+    					</div>
+    					<div class="district_wrapper">
+    						<div class="district">
+    						<img src="img/top_district.svg">
+    						<a class="genre_title">三神地区</a>
+    						<ul class="district_list">
+    							<li>鳥栖市</li>
+    							<li>神崎市</li>
+    							<li>三養基郡</li>
+    							<li>神崎郡</li>
+    						</div>
+    					</div>
+    					<div class="district_wrapper">
+    						<div class="district">
+    						<img src="img/top_district.svg">
+    						<a class="genre_title">杵藤地区</a>
+    						<ul class="district_list">
+    							<li>武雄市</li>
+    							<li>鹿島市</li>
+    							<li>嬉野市</li>
+    							<li>杵島市</li>
+    							<li>藤津郡</li>
+    						</div>
+    					</div>
+    					<div class="district_wrapper">
+    						<div class="district">
+    						<img src="img/top_district.svg">
+    						<a class="genre_title">唐松地区</a>
+    						<ul class="district_list">
+    							<li>佐賀市</li>
+    							<li>小城市</li>
+    							<li>多久市</li>
+    						</div>
+    					</div>
+    					<div class="district_wrapper">
+    						<div class="district">
+    						<img src="img/top_district.svg">
+    						<a class="genre_title">伊西地区</a>
+    						<ul class="district_list">
+    							<li>佐賀市</li>
+    							<li>小城市</li>
+    							<li>多久市</li>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+	 		</div>
+    	</div>
+    </div>

@@ -1,4 +1,7 @@
 <div class="container mt-5">
 <h4>記事の編集</h4>
   <%= render 'articles/form' %>
+  <p class="text-right">
+    <%= link_to "削除する", article_path(@article), method: "delete", data: {confirm: "記事を削除しますか？"}, class: "btn btn-danger destroy-btn" %>
+  </p>
 </div>

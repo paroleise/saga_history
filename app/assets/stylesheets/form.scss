@@ -1,0 +1,58 @@
+//正味どうでもいい
+
+.destroy-btn {
+  position: relative;
+  top: -2.2rem;
+}
+
+//テキストエリア内部の装飾はここ
+.ql-container.ql-snow {
+  margin-bottom: 25px;
+  height: 50vh;
+}
+
+
+//表示された記事の装飾はここ
+.article-content {
+  /*
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  a {
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  ul {
+      list-style: none;
+    li {
+      color: #222;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+  */
+}
+
+
+//インデックス上の編集ボタン
+.editinindex {
+  color: #fff;
+  position: relative;
+  z-index: 500;
+  background: #0ca;
+  border-radius: 2px;
+  padding: 10px 16px;
+  &:hover {
+    text-decoration: none;
+    background: #0a9;
+    color: #fff;
+  }
+}
