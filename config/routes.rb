@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
 
+
 	resources :articles
-
-	namespace :articles do
-	  root  'articles#index'
-	end
-
 	post "authorize" => "articles#authorize"
-	get "authorization", to: "articles#authorization", as: "authorization"
-	get "list", to: "articles#list", as: "list"
+	post "list", to: "articles#list", as: "list"
+	get "list", to: "articles#list", as: "list_get"
 	post "content", to: "articles#content", as: "content"
+	post "filter", to: "articles#filter", as: "filter"
 	post "logout", to: "articles#logout", as: "logout"
 	get "figure", to: "top#figure", as: "figure"
+	get "login", to: "articles#login", as: "login"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
- 	root "top#index"
+ 	root "articles#index"
+	post "void", to: "articles#void", as: "void"
+	post "top", to: "articles#root", as: "top"
 end

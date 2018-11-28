@@ -18,12 +18,9 @@
 @import "bootstrap";
 @import "variable";
 
-.container {
-  padding-top: 3.47rem;
-}
 //ヘッダ
 header {
-  height: 3.47rem;
+  height: $header;
   width: 100%;
   background-color: $white;
   border-bottom: solid 3px #000;
@@ -40,8 +37,47 @@ header {
         padding: .3rem;
         color: $black; //TODO:: hoverの動作
     }
-    &:last-child a{
-      padding: .3rem 1rem;
+  }
+}
+
+//dropdown
+.nav-right ul {
+  display: flex;
+  height: 100%;
+  a {
+    padding:  .3rem 1rem;
+    display: block;
+  	color: #333;
+  	padding: 0 15px;
+  }
+  li {
+    &:hover > ul {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  ul {
+    display: none;
+    &:hover {
+      display: flex;
+      justify-content: space-around;
+    }
+    width: 100vw;
+    top: 3.45rem;
+    left: 0;
+    background: $white;
+    li {
+      text-align: center;
+      width: 100%;
+      height: $header;
+      a {
+        width: 100%;
+        height: 100%;
+        line-height: $header;
+        &:hover {
+          background-color: #ccc;
+        }
+      }
     }
   }
 }

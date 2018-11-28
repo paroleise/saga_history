@@ -1,0 +1,8 @@
+<% if @region %>
+  <% articles = Article.where(hidden: 0, region: @region) %>
+<% elsif @category %>
+  <% articles = Article.where(hidden: 0, category: @category) %>
+<% else %>
+  <% articles = Article.all.where(hidden: 0) %>
+<% end %>
+$("#grobal").html("<%= j(render partial: 'articles/filtered', locals: { articles: articles, divisions: @divisions, regions: @regions } ) %>");
