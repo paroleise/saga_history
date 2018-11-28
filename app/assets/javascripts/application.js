@@ -15,7 +15,6 @@
 //= require rails-ujs
 //= require popper
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require activestorage
 //= require quill.global
 //= require_tree .

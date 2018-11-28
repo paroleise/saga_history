@@ -1,6 +1,6 @@
 <%= simple_form_for @article, html: { class: 'mt-5' } do |f| %>
 <div class="w-75">
-<%= f.input :title, required: true%>
+  <%= f.input :title, required: true%>
 </div>
 <div class="row pl-3 mb-3">
   <%= f.input :region, required: true, collection: [["佐賀地区", :saga], ["三神地区", :sanshin], ["杵藤地区", :kito], ["唐松地区", :karamatsu], ["伊西地区", :isai]] %>

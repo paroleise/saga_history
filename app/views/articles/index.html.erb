@@ -1,28 +1,3 @@
-<% @divisions.each_with_index do |division, i| %>
-	<% @articles_div = @articles.where(division: division) %>
-	<div class="<%= i % 2 != 0 ? "background_even" : "background_odd"%>">
-		<div class="container-fluid row article">
-				<div class="col-lg-3 col-md-6">
-					<div class="map rel">
-						<%= image_tag("/img/map.svg", class: "gio abs") %>
-					</div>
-				</div>
-				<div class="col-2 mr-3 pt-5 mt-5">
-					<div class="mt-5 pt-5">
-						<%# TODO: 記事が存在しないdivisionを除外  %>
-							<%= link_to t("article.region.saga"), content_path(region: "saga", division: division), method: :post, remote: true %>
-							<%= link_to t("article.region.sanshin"), content_path(region: "sanshin", division: division), method: :post, remote: true %>
-							<%= link_to t("article.region.kito"), content_path(region: "kito", division: division), method: :post, remote: true %>
-							<%= link_to t("article.region.karamatsu"), content_path(region: "karamatsu", division: division), method: :post, remote: true %>
-							<%= link_to t("article.region.isai"), content_path(region: "isai", division: division), method: :post, remote: true %>
-					</div>
-							<b><%= t("article.division.#{division}") %></b>
-				</div>
-				<div class="col-6 rel">
-						<div id="content-<%= division %>" class="mt-5 pt-5">
-								<%= render partial: "content" , :locals => { article: @articles_div.last } %>
-						</div>
-				</div>
-		</div>
-	</div>
-<% end %>
+<div id="grobal">
+	<%= render partial: "articles/root" %>
+</div>

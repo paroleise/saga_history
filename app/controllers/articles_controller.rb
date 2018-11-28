@@ -1,11 +1,23 @@
 class ArticlesController < ApplicationController
+  include AjaxHelper
   before_action :request_password, only: [:new, :list, :edit]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   protect_from_forgery except: :authorize
 
   def index
     @divisions = ["jomon", "yayoi", "kofun", "asuka", "heian", "kamakura", "muromachi", "azuchi", "edofirst", "edolast", "meiji", "taisho", "showa", "heisei"]
-  	@articles = Article.all.where(hidden: 0)
+    @regions = ["saga", "sanshin", "kito", "karamatsu", "isai"]
+  	@articles = Article.where(hidden: 0).all
+  end
+
+  def filter
+    @divisions = ["jomon", "yayoi", "kofun", "asuka", "heian", "kamakura", "muromachi", "azuchi", "edofirst", "edolast", "meiji", "taisho", "showa", "heisei"]
+    @regions = ["saga", "sanshin", "kito", "karamatsu", "isai"]
+    if params[:region]
+      @region = params[:region]
+    elsif params[:category]
+      @category = params[:category]
+    end
   end
 
   def content
@@ -24,7 +36,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to articles_root_path, notice: "記事を投稿しました"
+      redirect_to list_path, notice: "記事を投稿しました"
     else
       render("articles/new")
     end
@@ -36,7 +48,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to articles_root_path, notice: "記事を編集しますた"
+      redirect_to list_path, notice: "記事を編集しますた"
     else
       render 'edit'
     end
@@ -48,11 +60,9 @@ class ArticlesController < ApplicationController
   end
 
 
-
-
-
   #ログイン関係
-  def authorization
+
+  def login
   end
 
   def authorize
@@ -60,7 +70,7 @@ class ArticlesController < ApplicationController
       @current_user = Mochi.new
       @current_user.save
       session[:mochi_id] = @current_user.id
-      redirect_to :list
+      redirect_to :root
     else
       render 'authorization'
     end
@@ -72,6 +82,8 @@ class ArticlesController < ApplicationController
     redirect_to :root
   end
 
+  def void
+  end
 
   private
 
@@ -90,4 +102,5 @@ class ArticlesController < ApplicationController
       redirect_to authorization_path
     end
   end
+
 end

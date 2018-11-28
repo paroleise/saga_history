@@ -1,6 +1,12 @@
 //タグで色やポイントの座標が変わるからここで初期化する
 @import "variable";
 
+
+//ヘッダの空リンクをカーソル矢印に
+.void_path, .void_path:hover {
+  cursor: default;
+}
+
 //浮かすやつ
 .rel {
   position: relative;

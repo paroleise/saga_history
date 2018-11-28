@@ -14,15 +14,59 @@
     <header>
       <div class="container-fluid">
         <nav class="nav-left">
-          <%= link_to "TOP", root_path %>
+          <% if session[:mochi_id] %>
+            <%= link_to "TOP", root_path %>
+          <% else %>
+            <%= link_to "TOP", top_path, method: :post,remote: true %>
+          <% end %>
         </nav>
         <nav class="nav-right">
-          <%= link_to "全体でみる", articles_root_path %>
-          <%= link_to "できごとの分類でみる", articles_root_path %> <%# 非同期ソート#%>
-          <%= link_to "地区別の分類でみる", articles_root_path %>
-          <% if session[:mochi_id] %>
-            <%= link_to "もちもち",  list_path, class: "text-primary" %>
-          <% end %>
+          <ul>
+            <li><%= link_to "全体でみる", filter_path, method: :post, remote: true %></li>
+            <li><%= link_to "できごとの分類でみる", void_path, method: :post, remote: true, class: "void_path"  %>
+              <ul class="abs">
+                <li>
+                  <%= link_to t("article.category.government"), filter_path(category: "government"), method: :post, remote: true %>
+                </li>
+                <li>
+                  <%= link_to t("article.category.economy"), filter_path(category: "economy"), method: :post, remote: true %>
+                </li>
+                <li>
+                  <%= link_to t("article.category.technology"), filter_path(category: "technology"), method: :post, remote: true %>
+                </li>
+                <li>
+                  <%= link_to t("article.category.culture"), filter_path(category: "culture"), method: :post, remote: true %>
+                </li>
+                <li>
+                  <%= link_to t("article.category.religion"), filter_path(category: "religion"), method: :post, remote: true %>
+                </li>
+              </ul>
+            </li>
+            <li><%= link_to "地区別の分類でみる", void_path, method: :post, remote: true, class: "void_path" %>
+              <ul class="abs">
+                <li>
+                  <%= link_to t("article.region.saga"), filter_path(region: "saga"), method: :post, remote: true %>
+                </li>
+                <li>
+                  <%= link_to t("article.region.sanshin"), filter_path(region: "sanshin"), method: :post, remote: true %>
+                </li>
+                <li>
+                  <%= link_to t("article.region.kito"), filter_path(region: "kito"), method: :post, remote: true %>
+                </li>
+                <li>
+                  <%= link_to t("article.region.karamatsu"), filter_path(region: "karamatsu"), method: :post, remote: true %>
+                </li>
+                <li>
+                  <%= link_to t("article.region.isai"), filter_path(region: "isai"), method: :post, remote: true %>
+                </li>
+              </ul>
+            </li>
+            <% if session[:mochi_id] %>
+              <li>
+                <%= link_to "もちもち",  list_path, method: :post, remote: true, class: "text-primary" %>
+              </li>
+            <% end %>
+          </ul>
         </nav>
       </div>
     </header>
