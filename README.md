@@ -1,15 +1,15 @@
 # README
 
-#pullしたらやること
+# pullしたらやること
 - bundle exec rails db:migrate → マイグレーションファイルのコンパイルを実行する
 - ブランチを切る(切ろう)
 
-#スタイルを整える
+# スタイルを整える
 - app > views > articles で html
 - app > views > layouts > application.html.erb headerなどの共通部分のレイアウト
 - app > assets > stylesheetでCSS
 
-#Articleモデルの中身
+# Articleモデルの中身
 "title"  
 "content"  
 "created_at"  
@@ -23,10 +23,10 @@
 "coordinateY" → ドットのY座標(上から)int型  
 
 
-#ログインするには
+# ログインするには
 urlに /login を打つ
 →.envで設定したパスワードを入力
 
-#画像ファイルを入れる場所
+# 画像ファイルを入れる場所
 - public > img の中にいれる
 html.erbでの呼び出しは　``` <%= image_tag("/img/gazou.jpg", class: "hoge") %> ``` と入力する
