@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_24_062013) do
+ActiveRecord::Schema.define(version: 2018_11_29_142950) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2018_11_24_062013) do
     t.string "division"
     t.string "year"
     t.boolean "hidden", default: false, null: false
+    t.integer "coordinateX"
+    t.integer "coordinateY"
   end
 
   create_table "mochis", force: :cascade do |t|

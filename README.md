@@ -1,25 +1,32 @@
 # README
 
-mochiの卒研でござる
+#pullしたらやること
+- bundle exec rails db:migrate → マイグレーションファイルのコンパイルを実行する
+- ブランチを切る(切ろう)
 
-#DB設計
+#スタイルを整える
+- app > views > articles で html
+- app > views > layouts > application.html.erb headerなどの共通部分のレイアウト
+- app > assets > stylesheetでCSS
 
-- articleモデル
-	基本これだけ
+#Articleモデルの中身
+"title"  
+"content"  
+"created_at"  
+"updated_at"  
+"region" → 地域  
+"category" → カテゴリ
+"division" → 時代区分
+"year" → 年号  
+"hidden" →非表示にするなら Boolean型  
+"coordinateX" → ドットのX座標(左から) int型  
+"coordinateY" → ドットのY座標(上から)int型  
 
-- carrierwave_imageモデル
-	動的ページで画像を扱うなら
 
-#ページ設計  
-- index  
-	- articlesの一覧表示  
-	- 地区ごとに表示  
-	- カテゴリごとに表示  
+#ログインするには
+urlに /login を打つ
+→.envで設定したパスワードを入力
 
-- admin
-	mochi専用フォーム、投稿のCRUDフォーム  
-
-- 偉人一覧ページ  
-
-#パラメータ
-地区、カテゴリ、歴史区分、年号
+#画像ファイルを入れる場所
+- public > img の中にいれる
+html.erbでの呼び出しは　``` <%= image_tag("/img/gazou.jpg", class: "hoge") %> ``` と入力する

@@ -1,3 +1,92 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variable";
+
+
+//記事内部のCSSはここに
+// _content.html.erbを参照する
+
+
+//年号
+.article-year {
+  background: $white;
+  border: solid 3px $black;
+  padding: 9px 10px;
+  width: 127px;
+  display: inline-block;
+  text-align: center;
+  left: 30px;
+  top: 1.5rem;
+  font-weight: bold;
+  z-index: 101;
+}
+//カテゴリ
+.article-category {
+  padding: 12px;
+  width: 130px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  z-index: 101;
+  top: 1.5em;
+}
+
+
+//記事の部分
+.article-body {
+  border: solid 3px $black;
+  height: 70vh;
+  max-height: 600px;
+  overflow: scroll;
+  background: $white;
+  z-index: 100;
+  padding: 3rem 3rem 0 3rem;
+  box-shadow: 1.2px 2px 1px rgba(0,0,0,0.4);
+}
+
+//影
+.shadow {
+  width: 97%;
+  background: $white;
+  border: solid 3px $black;
+  height: 70vh;
+  z-index: 1;
+  top: 3%;
+  left: 7%;
+}
+
+//タイトル
+.article-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+//表示された記事の装飾はここ
+.article-content {
+  /*
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  a {
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  ul {
+      list-style: none;
+    li {
+      color: #222;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+  */
+}

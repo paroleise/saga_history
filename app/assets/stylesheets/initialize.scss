@@ -1,13 +1,14 @@
-//タグで色やポイントの座標が変わるからここで初期化する
-@import "variable";
+//カテゴリの色や使い回すやつはここで初期化する
 
+
+@import "variable";
 
 //ヘッダの空リンクをカーソル矢印に
 .void_path, .void_path:hover {
   cursor: default;
 }
 
-//浮かすやつ
+//浮動要素
 .rel {
   position: relative;
 }
@@ -23,22 +24,30 @@
   background-color: $even;
 }
 
-//カテゴリ区分
+//####カテゴリ区分################
+//カテゴリタグ
 .government {
   background-color: $government;
+  color: $white;
 }
 .economy {
-  background-color: $economy
+  background-color: $economy;
+  color: $white;
 }
 .technology {
   background-color: $technology;
+  color: $white;
 }
 .culture {
   background-color: $culture;
+  color: $white;
 }
 .religion {
   background-color: $religion;
+  color: $white;
 }
+
+//タイトル
 .title-government {
   color: $government;
 }
@@ -53,4 +62,36 @@
 }
 .title-religion {
   color: $religion;
+}
+
+//ドットの色
+.dot-government {
+  color: $government;
+  &:hover {
+    color: lighten($government, 20%);
+  }
+}
+.dot-economy {
+  color: $economy;
+  &:hover {
+    color: lighten($economy, 20%);
+  }
+}
+.dot-technology {
+  color: $technology;
+  &:hover {
+    color: lighten($technology, 20%);
+  }
+}
+.dot-culture {
+  color: $culture;
+  &:hover {
+    color: lighten($culture, 20%);
+  }
+}
+.dot-religion {
+  color: $religion;
+  &:hover {
+    color: lighten($religion, 20%);
+  }
 }

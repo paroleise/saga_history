@@ -12,5 +12,7 @@ ja:
         region: 地域
         division: 歴史区分
         year: 年号
+        coordinateX: X座標
+        coordinateY: Y座標
         content: 記事内容
         hidden: 非公開にする

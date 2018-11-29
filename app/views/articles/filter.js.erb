@@ -5,4 +5,4 @@
 <% else %>
   <% articles = Article.all.where(hidden: 0) %>
 <% end %>
-$("#grobal").html("<%= j(render partial: 'articles/filtered', locals: { articles: articles, divisions: @divisions, regions: @regions } ) %>");
+$("#grobal").html("<%= j(render partial: 'articles/article', locals: { articles: articles, divisions: @divisions, regions: @regions } ) %>");
