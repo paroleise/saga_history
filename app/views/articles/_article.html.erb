@@ -1,0 +1,32 @@
+<% divisions.each_with_index do |division, i| %> <%# 時代ごとに1つのブロックをループ%>
+  <% articles_div = articles.where(division: division) %>
+  <div class="<%= i % 2 != 0 ? "background_even" : "background_odd"%>">
+    <div class="container-fluid row article">
+
+      <%########################↓地図とドット##################################################%>
+      <%= image_tag("/img/map.svg", class: "gio abs") %>
+      <div class="gio-dot abs">
+        <% articles_div.each do |article| %>
+          <% if article %>
+            <%= link_to content_path(region: article.region, division: division), method: :post, remote: true, class: "dotlink" do %>
+              <span class="dot abs dot-<%= article.category %>" style="left: <%= article.coordinateX %>%; top: <%= article.coordinateY %>%;">●</span>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <%########################↓時代(画像に差し替えるならsrc属性のアドレスをdivisionに合わせてつけると楽)##################################################%>
+      <div class="col-2 offset-md-6 offset-lg-3 mr-3 pt-5 mt-5">
+        <b><%= t("article.division.#{division}") %></b>
+      </div>
+
+      <%########################↓記事内容をリクエストに合わせてレンダリングしている (_content.html.erbを呼び出している)##################################################%>
+      <div class="col-6 rel">
+        <div id="content-<%= division %>" class="mt-5 pt-5">
+          <%= render partial: "content" , :locals => { article: articles_div.last } %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<% end %>

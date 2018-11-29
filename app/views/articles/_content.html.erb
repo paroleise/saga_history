@@ -1,13 +1,18 @@
-<div class="article-body rel">
-  <% if article %>
-    <span class="article-year"><%= article.year %></span>
-    <span class="<%= article.category %> text-white"><%= t("article.category.#{article.category}") %></span>
-    <h2 class="title-<%= article.category %>"><%= article.title %></h2>
-    <%= t("article.region.#{article.region}") %>
-    <div class="article-content">
-      <%== article.content %>
+<% if article %>
+<span class="article-year mr-5 rel"><%= article.year %></span> <%#年号%>
+<span class="<%= article.category %> article-category rel"><%= t("article.category.#{article.category}") %></span>　<%#カテゴリ%>
+
+<div class="content-wrapper rel">
+  <div class="article-body rel"> <%#記事の背景%>
+    <h2 class="title-<%= article.category %> article-title"><%= article.title %></h2> <%#タイトル%>
+
+    <%#######記事内容#####################%>
+    <div class="article-content">　
+      <%== article.content %>　
     </div>
-  <% end %>
+  </div>
+
+  <div class="shadow abs"></div>  <%#影%>
 </div>
 
-<div class="shadow abs"></div>
+<% end %>

@@ -18,6 +18,11 @@
 @import "bootstrap";
 @import "variable";
 
+
+//共通レイアウトをここに書く
+//application.html.erb や
+//_article.html.erbを参照する
+
 //ヘッダ
 header {
   height: $header;
@@ -40,7 +45,7 @@ header {
   }
 }
 
-//dropdown
+//ヘッダー右のドロップダウン
 .nav-right ul {
   display: flex;
   height: 100%;
@@ -82,41 +87,21 @@ header {
   }
 }
 
-
-//index
+//一時代ごとの高さを100vhに
 .article {
   height: 100vh;
 }
 
-
-.article-year {
-  background: $white;
-  border: solid 3px $black;
-}
-
-.gio {
-  //背景がでかすぎて相対化できないのがまずい。レスポンシブで即死すると思われる
+//地図とドット
+//#!!!! 元の画像の比率が 1640 × 1750 なので、縮尺合わせて指定すること
+.gio, .gio-dot {
   width: 1065px;
-  left: -67px;
-  top: -5vh;
+  height: 1136px;
+  left: -100px;
 }
 
-
-.article-body {
-  border: solid 3px $black;
-  height: 70vh;
-  margin-top: 12vh;
-  overflow: scroll;
-  background: $white;
-  z-index: 100;
-}
-
-.shadow {
-  width: 97%;
-  background: $white;
-  border: solid 3px $black;
-  height: 70vh;
-  z-index: 1;
-  top: 13.5%;
-  left: 5%;
+.dot {
+ font-size: 1.5rem;
+ z-index: 10000;
+ display: block;
 }
