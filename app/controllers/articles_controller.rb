@@ -72,7 +72,7 @@ class ArticlesController < ApplicationController
       session[:mochi_id] = @current_user.id
       redirect_to :root
     else
-      render 'authorization'
+      render 'login'
     end
   end
 
