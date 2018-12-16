@@ -1,7 +1,7 @@
 <% divisions.each_with_index do |division, i| %> <%# 時代ごとに1つのブロックをループ%>
   <% articles_div = articles.where(division: division) %>
   <div class="<%= i % 2 != 0 ? "background_even" : "background_odd"%>">
-    <div class="container-fluid row article">
+    <div class="container-fluid row article <%= division %>" id="<%= division %>">
 
       <%########################↓地図とドット##################################################%>
       <%= image_tag("/img/map.svg", class: "gio abs") %>
@@ -31,7 +31,20 @@
   </div>
 <% end %>
 
+
+<%# 固定サイドバー %>
+<div class="sidebar">
+  <% @divisions.each do |division| %>
+    <div class="side-division">
+      <a href="#<%= division %>">
+        <%= t("article.division.#{division}") %>
+      </a>
+    </div>
+  <% end %>
+</div>
+
 <script>
+  /* scrollify使ってる。内部リンクと相性悪いので代替案を考える
   $(function() {
     $.scrollify({
       section : ".article",
@@ -41,7 +54,7 @@
       scrollSpeed: 1100,
       offset : 0,
       scrollbars: true,
-      standardScrollElements: ".article-body ",
+      standardScrollElements: ".article-body .atricle",
       setHeights: true,
       overflowScroll: true,
       updateHash: true,
@@ -52,4 +65,5 @@
       afterRender:function() {}
     });
   });
+  */
 </script>

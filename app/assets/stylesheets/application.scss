@@ -105,3 +105,23 @@ header {
  z-index: 10000;
  display: block;
 }
+
+//サイドバー
+.sidebar {
+  position: fixed;
+  z-index: 1500;
+  left: 50px;
+  top: 100px;
+
+  .side-division {
+    display: block;
+    padding: 10px;
+    a {
+      color: #999;
+      &:hover {
+        text-decoration: none;
+        opacity: 0.7;
+      }
+    }
+  }
+}
