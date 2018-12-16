@@ -30,3 +30,26 @@
     </div>
   </div>
 <% end %>
+
+<script>
+  $(function() {
+    $.scrollify({
+      section : ".article",
+      sectionName : "section-name",
+      interstitialSection : "",
+      easing: "easeOutExpo",
+      scrollSpeed: 1100,
+      offset : 0,
+      scrollbars: true,
+      standardScrollElements: ".article-body ",
+      setHeights: true,
+      overflowScroll: true,
+      updateHash: true,
+      touchScroll:true,
+      before:function() {},
+      after:function() {},
+      afterResize:function() {},
+      afterRender:function() {}
+    });
+  });
+</script>
