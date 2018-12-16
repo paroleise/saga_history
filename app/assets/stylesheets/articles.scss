@@ -64,6 +64,13 @@
 
 //表示された記事の装飾はここ
 .article-content {
+  a {
+    color: #359;
+    &:hover {
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
   /*
   h1 {
     font-size: 2rem;
