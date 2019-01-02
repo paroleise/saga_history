@@ -1,7 +1,10 @@
+<!--メインメタ情報とヘッダー-->
+
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>佐賀っ</title>
+    <title>さがん歴史地図</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -64,7 +67,7 @@
             </li>
             <% if session[:mochi_id] %>
               <li>
-                <%= link_to "もちもち",  list_path, method: :post, remote: true, class: "text-info" %>
+                <%= link_to "記事を書く",  list_path, method: :post, remote: true, class: "text-info" %>
               </li>
             <% end %>
           </ul>

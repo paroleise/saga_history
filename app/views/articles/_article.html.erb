@@ -1,3 +1,8 @@
+<%#メインページ%>
+
+
+
+
 <% divisions.each_with_index do |division, i| %> <%# 時代ごとに1つのブロックをループ%>
   <% articles_div = articles.where(division: division) %>
   <div class="<%= i % 2 != 0 ? "background_even" : "background_odd"%>">
@@ -21,7 +26,7 @@
       </div>
 
       <%########################↓記事内容をリクエストに合わせてレンダリングしている (_content.html.erbを呼び出している)##################################################%>
-      <div class="col-6 rel">
+      <div class="col-6 rel" style="margin: 0 -7rem 0 5rem;">
         <div id="content-<%= division %>" class="mt-5 pt-5">
           <%= render partial: "content" , :locals => { article: articles_div.last } %>
         </div>
