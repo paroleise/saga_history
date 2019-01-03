@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
   def filter
     @divisions = ["jomon", "yayoi", "kofun", "asuka", "heian", "kamakura", "muromachi", "azuchi", "edofirst", "edolast", "meiji", "taisho", "showa", "heisei"]
     @regions = ["saga", "sanshin", "kito", "karamatsu", "isai"]
+    @svg_category = params[:category] ? params[:category] : "all"
     if params[:region]
       @region = params[:region]
     elsif params[:category]
