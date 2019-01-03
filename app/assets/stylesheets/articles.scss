@@ -13,7 +13,7 @@
   background: $white;
   border: solid 3px $black;
   padding: 9px 10px;
-  width: 127px;
+  width: 150px;
   display: inline-block;
   text-align: center;
   left: 30px;
@@ -21,6 +21,7 @@
   font-weight: bold;
   z-index: 101;
 }
+
 //カテゴリ
 .article-category {
   padding: 12px;
@@ -42,24 +43,25 @@
   background: $white;
   z-index: 100;
   padding: 3rem 3rem 0 3rem;
-  box-shadow: 1.2px 2px 1px rgba(0,0,0,0.4);
+ // box-shadow: 1.2px 2px 1px rgba(0,0,0,0.4);
 }
 
 //影
 .shadow {
-  width: 97%;
+  width: 100%;
   background: $white;
   border: solid 3px $black;
   height: 70vh;
   z-index: 1;
   top: 3%;
-  left: 7%;
+  left: 3%;
 }
 
 //タイトル
 .article-title {
   font-size: 1.6rem;
   font-weight: bold;
+  margin: 0 0 1rem 0;
 }
 
 //表示された記事の装飾はここ
@@ -71,20 +73,20 @@
       text-decoration: none;
     }
   }
-  /*
   h1 {
-    font-size: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
   }
   h2 {
-    font-size: 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    color: #999;
   }
   p {
     font-size: 1rem;
-  }
-  a {
-    &:hover{
-      text-decoration: none;
-    }
+    letter-spacing: 0.02rem;
+    line-height: 1.65rem;
   }
   ul {
       list-style: none;
@@ -95,5 +97,4 @@
   img {
     max-width: 100%;
   }
-  */
 }

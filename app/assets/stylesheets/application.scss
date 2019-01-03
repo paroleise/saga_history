@@ -97,7 +97,8 @@ header {
 .gio, .gio-dot {
   width: 1065px;
   height: 1136px;
-  left: -100px;
+//  top: -30px;
+  left: -70px;
 }
 
 .dot {
@@ -115,9 +116,10 @@ header {
 
   .side-division {
     display: block;
-    padding: 10px;
     a {
-      color: #999;
+      color: #777;
+      line-height: 2.5rem;
+      font-size: 0.9rem;
       &:hover {
         text-decoration: none;
         opacity: 0.7;
