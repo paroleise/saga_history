@@ -9,7 +9,7 @@
     <div class="container-fluid row article <%= division %>" id="<%= division %>">
 
       <%########################↓地図とドット##################################################%>
-      <%= image_tag("/img/map.svg", class: "gio abs") %>
+      <%= image_tag("/img/maps/#{division}.svg", class: "gio abs") %>
       <div class="gio-dot abs">
         <% articles_div.each do |article| %>
           <% if article %>
