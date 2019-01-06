@@ -27,7 +27,7 @@
 
       <%########################↓記事内容をリクエストに合わせてレンダリングしている (_content.html.erbを呼び出している)##################################################%>
       <div class="col-6 rel" style="margin: 0 -7rem 0 5rem;">
-        <div id="content-<%= division %>" class="mt-5 pt-5">
+        <div id="content-<%= division %>" class="mt-5 pt-5 allowScroll">
           <%= render partial: "content" , :locals => { article: articles_div.last } %>
         </div>
       </div>
@@ -75,6 +75,14 @@
     });
   });
 
+$(".allowScroll").hover(
+  function () {
+    $.scrollify.disable();
+  },
+  function () {
+    $.scrollify.enable();
+  }
+);
 
 
 //ページ内ジャンプでのスクロール
