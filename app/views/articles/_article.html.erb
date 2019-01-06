@@ -6,7 +6,7 @@
 <% divisions.each_with_index do |division, i| %> <%# 時代ごとに1つのブロックをループ%>
   <% articles_div = articles.where(division: division) %>
   <div class="<%= i % 2 != 0 ? "background_even" : "background_odd"%>">
-    <div class="container-fluid row article <%= division %>" id="<%= division %>">
+    <div class="container-fluid row article <%= division %>" id="<%= i + 1 %>">
 
       <%########################↓地図とドット##################################################%>
       <%= image_tag("/img/maps/#{division}.svg", class: "gio abs") %>
@@ -39,9 +39,9 @@
 
 <%# 固定サイドバー %>
 <div class="sidebar">
-  <% @divisions.each do |division| %>
+  <% @divisions.each_with_index do |division, index| %>
     <div class="side-division">
-      <a href="#<%= division %>">
+      <a href="#<%= index + 1 %>">
         <%= t("article.division.#{division}") %>
       </a>
     </div>
@@ -49,7 +49,11 @@
 </div>
 
 <script>
-  /* scrollify使ってる。内部リンクと相性悪いので代替案を考える
+// このスクリプトタグ内に書くこと
+// 共通部分やアセット内に書くとloadが発火しません。
+
+
+// 時代区分のスクロール制御
   $(function() {
     $.scrollify({
       section : ".article",
@@ -70,5 +74,30 @@
       afterRender:function() {}
     });
   });
-  */
+
+
+
+//ページ内ジャンプでのスクロール
+
+  var scrollElm = (function() {
+    if('scrollingElement' in document) {
+      return document.scrollingElement;
+    }
+    if(navigator.userAgent.indexOf('WebKit') != -1) {
+      return document.body;
+    }
+    return document.documentElement;
+  })();
+
+  $('a[href^="#"]').not('.noscroll').on('click', function() {
+    var speed = 1100;
+    var easing = 'swing';
+    var href= $(this).attr("href");
+    $(scrollElm).animate({
+      scrollTop: $(href == "#" ? 'html' : href).offset().top
+    }, speed, easing);
+    return false;
+  });
+
+
 </script>
