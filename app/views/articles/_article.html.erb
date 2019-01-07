@@ -6,7 +6,18 @@
 <% divisions.each_with_index do |division, i| %> <%# 時代ごとに1つのブロックをループ%>
   <% articles_div = articles.where(division: division) %>
   <div class="<%= i % 2 != 0 ? "background_even" : "background_odd"%>">
-    <div class="container-fluid row article <%= division %>" id="<%= i + 1 %>">
+    <div class="container-fluid row article rel <%= division %>" id="<%= i + 1 %>">
+
+      <%########################↓サイドバーの目盛り##################################################%>
+      <div class="scale scale-top abs">
+        <div class="scale-bar"></div>
+        <%= top_ruler(division) %>
+      </div>
+      <div class="scale scale-bottom abs">
+        <div class="scale-bar"></div>
+        <%= bottom_ruler(division) %>
+      </div>
+
 
       <%########################↓地図とドット##################################################%>
       <%= image_tag("/img/maps/#{division}.svg", class: "gio abs") %>
@@ -39,6 +50,9 @@
 
 <%# 固定サイドバー %>
 <div class="sidebar">
+  <div class="ruler">
+  </div>
+
   <% @divisions.each_with_index do |division, index| %>
     <div class="side-division">
       <a href="#<%= index + 1 %>">
@@ -47,6 +61,7 @@
     </div>
   <% end %>
 </div>
+
 
 <script>
 // このスクリプトタグ内に書くこと
