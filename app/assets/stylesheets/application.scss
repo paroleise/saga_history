@@ -123,32 +123,6 @@ header {
     float: left;
   }
 }
-.side-division {
-  margin-left: 30px;
-  margin-top: 15px;
-  a {
-    display: inline-block;
-    color: #444;
-    line-height: 2.5rem;
-    font-size: 0.9rem;
-    transition: 0.5s;
-    &:hover {
-      text-decoration: none;
-      color: #d33;
-      transition: 0.5s;
-    }
-  }
-}
-.side-dot {
-  height: 0.8rem;
-  vertical-align: text-bottom;
-  fill: #fff;
-  border: solid 2px #000;
-  border-radius: 1rem;
-}
-.current-dot {
-  fill: #000;
-}
 
 
 //サイドバーの目盛り
