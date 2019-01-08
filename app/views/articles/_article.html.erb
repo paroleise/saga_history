@@ -52,14 +52,6 @@
 <div class="sidebar">
   <div class="ruler">
   </div>
-
-  <% @divisions.each_with_index do |division, index| %>
-    <div class="side-division">
-      <a href="#<%= index + 1 %>">
-        <%= t("article.division.#{division}") %>
-      </a>
-    </div>
-  <% end %>
 </div>
 
 
@@ -70,6 +62,7 @@
 
 // 時代区分のスクロール制御
   $(function() {
+    var current;
     $.scrollify({
       section : ".article",
       sectionName : "section-name",
@@ -83,13 +76,34 @@
       overflowScroll: true,
       updateHash: true,
       touchScroll:true,
-      before:function() {},
+      before:function(i,article){
+          current = i
+          $('.navigation .active').removeClass('active');
+          $('.navigation').find('.navigation-dot').eq(i).addClass('active');
+      },
       after:function() {},
       afterResize:function() {},
-      afterRender:function() {}
+      afterRender:function(){ //ナビゲーションHTMLの作成
+          var eras = ["縄文以前", "弥生時代", "古墳時代", "飛鳥・奈良時代", "平安時代",
+                     "鎌倉時代", "室町時代", "安土桃山時代", "江戸時代[前半]", "江戸時代[後半]",
+                     "明治時代", "大正時代", "昭和時代", "平成"];
+          var navigation = '<ul class="navigation">';
+          $('.article').each(function(i){
+              navigation += '<li><a class="navigation-dot"></a> <a class="navigation-link">' + eras[i] + '</a></li>';
+          });
+          navigation += '</ul>';
+          $('body').append(navigation);
+          $('.navigation-link').each(function(i){
+              $(this).on('click',function(){
+                  $.scrollify.move(i);
+              });
+          });
+          $('.navigation li:first-child').find('.navigation-dot').addClass('active');
+      }
     });
   });
 
+//記事内スクロールを優先
 $(".allowScroll").hover(
   function () {
     $.scrollify.disable();
@@ -121,6 +135,8 @@ $(".allowScroll").hover(
     }, speed, easing);
     return false;
   });
+
+
 
 
 </script>
