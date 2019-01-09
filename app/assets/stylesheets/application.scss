@@ -96,9 +96,9 @@ header {
 //#!!!! 元の画像の比率が 1640 × 1750 なので、縮尺合わせて指定すること
 .gio, .gio-dot {
   width: 1065px;
-  height: 1136px;
+  height: 669px;
 //  top: -30px;
-  left: -70px;
+  left: -25px;
 }
 
 .dot {
@@ -167,7 +167,7 @@ header {
 
 
 .navigation-dot{
-    border: 2px solid #000;
+    border: 1px solid #000;
     border-radius: 1rem;
     display: inline-block;
     background: #fff;
