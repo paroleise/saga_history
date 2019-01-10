@@ -71,5 +71,9 @@ module ArticlesHelper
     end
   end
 
+  def article?
+    controller.action_name != 'list' && controller.action_name != 'new' && controller.action_name != 'login'
+  end
+
 
 end

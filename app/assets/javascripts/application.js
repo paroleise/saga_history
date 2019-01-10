@@ -40,3 +40,15 @@ var defaults = {
         placeholder: '記事を入力してください',
     };
 Quilljs.setDefaults(defaults)
+
+
+
+$(function(){
+  $('#list, .nav-left a').click(function(){
+    $('.navigation').css("display","none");
+  })
+
+  $('.toArticle').click(function(){
+    $('.navigation').css("display","block");
+  })
+});
