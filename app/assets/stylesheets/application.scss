@@ -111,7 +111,7 @@ header {
 .sidebar {
   position: fixed;
   z-index: 1500;
-  left: 70px;
+  left: 40px;
   top: 100px;
   width: 200px;
 
@@ -128,32 +128,41 @@ header {
 //サイドバーの目盛り
 .scale {
   display: flex;
-  left: 63px;
+  display: inline-block;
+  left: 44px;
   z-index: 100;
+  font-weight: bold;
+  font-size: 0.95rem;
   &.scale-top {
-    top: 12%;
+    top: 10%;
   }
   &.scale-bottom {
-    top: 90%;
+    top: 94%;
   }
 }
 .scale-bar {
-  width: 50px;
-  height: 8px;
+  width: 30px;
+  height: 6px;
   background-color: #000;
+  vertical-align: middle;
+  display: inline-block;
+
 }
+
 
 
 //サイドナビゲーション
 .navigation{
     padding: 20px;
     position: fixed;
-    left: 5%;
-    top: 15%;
+    left: 4%;
+    top: 20%;
     z-index: 10000;
     li {
       list-style-type: none;
-      margin-bottom: 20px;
+      line-height: 2rem;
+      font-size: 0.85rem;
+      color: #666;
       a.navigation-link{
         display: inline-block;
         &:hover{
