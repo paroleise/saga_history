@@ -26,48 +26,48 @@
         </nav>
         <nav class="nav-right">
           <ul>
-            <li><%= link_to "全体でみる", filter_path, method: :post, remote: true %></li>
-            <li><%= link_to "できごとの分類でみる", void_path, method: :post, remote: true, class: "void_path"  %>
+            <li><%= link_to "全体でみる", filter_path, method: :post, remote: true, class: "toArticle" %></li>
+            <li><%= link_to "できごとの分類でみる", void_path, method: :post, remote: true, class: "void_path toArticle"  %>
               <ul class="abs">
                 <li>
-                  <%= link_to t("article.category.government"), filter_path(category: "government"), method: :post, remote: true %>
+                  <%= link_to t("article.category.government"), filter_path(category: "government"), method: :post, remote: true, class: "toArticle" %>
                 </li>
                 <li>
-                  <%= link_to t("article.category.economy"), filter_path(category: "economy"), method: :post, remote: true %>
+                  <%= link_to t("article.category.economy"), filter_path(category: "economy"), method: :post, remote: true, class: "toArticle" %>
                 </li>
                 <li>
-                  <%= link_to t("article.category.technology"), filter_path(category: "technology"), method: :post, remote: true %>
+                  <%= link_to t("article.category.technology"), filter_path(category: "technology"), method: :post, remote: true, class: "toArticle" %>
                 </li>
                 <li>
-                  <%= link_to t("article.category.culture"), filter_path(category: "culture"), method: :post, remote: true %>
+                  <%= link_to t("article.category.culture"), filter_path(category: "culture"), method: :post, remote: true, class: "toArticle" %>
                 </li>
                 <li>
-                  <%= link_to t("article.category.religion"), filter_path(category: "religion"), method: :post, remote: true %>
+                  <%= link_to t("article.category.religion"), filter_path(category: "religion"), method: :post, remote: true, class: "toArticle" %>
                 </li>
               </ul>
             </li>
-            <li><%= link_to "地区別の分類でみる", void_path, method: :post, remote: true, class: "void_path" %>
+            <li><%= link_to "地区別の分類でみる", void_path, method: :post, remote: true, class: "void_path toArticle" %>
               <ul class="abs">
                 <li>
-                  <%= link_to t("article.region.saga"), filter_path(region: "saga"), method: :post, remote: true %>
+                  <%= link_to t("article.region.saga"), filter_path(region: "saga"), method: :post, remote: true, class: "toArticle" %>
                 </li>
                 <li>
-                  <%= link_to t("article.region.sanshin"), filter_path(region: "sanshin"), method: :post, remote: true %>
+                  <%= link_to t("article.region.sanshin"), filter_path(region: "sanshin"), method: :post, remote: true, class: "toArticle" %>
                 </li>
                 <li>
-                  <%= link_to t("article.region.kito"), filter_path(region: "kito"), method: :post, remote: true %>
+                  <%= link_to t("article.region.kito"), filter_path(region: "kito"), method: :post, remote: true, class: "toArticle" %>
                 </li>
                 <li>
-                  <%= link_to t("article.region.karamatsu"), filter_path(region: "karamatsu"), method: :post, remote: true %>
+                  <%= link_to t("article.region.karamatsu"), filter_path(region: "karamatsu"), method: :post, remote: true, class: "toArticle" %>
                 </li>
                 <li>
-                  <%= link_to t("article.region.isai"), filter_path(region: "isai"), method: :post, remote: true %>
+                  <%= link_to t("article.region.isai"), filter_path(region: "isai"), method: :post, remote: true, class: "toArticle" %>
                 </li>
               </ul>
             </li>
             <% if session[:mochi_id] %>
               <li>
-                <%= link_to "記事を書く",  list_path, method: :post, remote: true, class: "text-info" %>
+                <%= link_to "記事を書く",  list_path, method: :post, remote: true, class: "text-info", id: "list" %>
               </li>
             <% end %>
           </ul>
