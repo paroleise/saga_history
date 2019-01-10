@@ -4,4 +4,7 @@ class TopController < ApplicationController
 
   def figure
   end
+
+  def notes
+  end
 end
