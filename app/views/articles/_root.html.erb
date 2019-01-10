@@ -152,6 +152,7 @@
     margin: auto;
   }
 
+
   .genre-1{
     color: #d43a52;
   }
@@ -229,6 +230,8 @@
   }
 
 
+
+
   .whatis{
     text-align: center;
     margin: 200px 0 0 0;
@@ -242,7 +245,7 @@
 
   .whatis p{
     font-size: 1rem;
-    line-height: 1.6rem;
+    line-height: 2.5rem;
     font-weight: bold;
   }
 
@@ -278,7 +281,7 @@
 
   .howto-text p{
     font-size: 1rem;
-    line-height: 1.2rem;
+    line-height: 2.5rem;
   }
 
 
@@ -332,33 +335,33 @@
               <img src="img/top_category.svg">
               <div class="genres">
                 <div class="genre-wrapper">
-                  <div class="genre-1 genre">
+                  <div class="genre">
                     <img src="img/top_g_1.svg">
-                    <%= link_to t("article.category.government"), filter_path(category: "government"), method: :post, remote: true, class: "genre-title" %>
+                    <%= link_to t("article.category.government"), filter_path(category: "government"), method: :post, remote: true, class: "genre-1" %>
                   </div>
                 </div>
                 <div class="genre-wrapper">
-                  <div class="genre-2 genre">
+                  <div class="genre">
                     <img src="img/top_g_2.svg">
-                    <%= link_to t("article.category.economy"), filter_path(category: "economy"), method: :post, remote: true, class: "genre-title" %>
+                    <%= link_to t("article.category.economy"), filter_path(category: "economy"), method: :post, remote: true, class: "genre-2" %>
                   </div>
                 </div>
                 <div class="genre-wrapper">
-                  <div class="genre-4 genre">
+                  <div class="genre">
                     <img src="img/top_g_4.svg">
-                    <%= link_to t("article.category.technology"), filter_path(category: "technology"), method: :post, remote: true, class: "genre-title" %>
+                    <%= link_to t("article.category.technology"), filter_path(category: "technology"), method: :post, remote: true, class: "genre-4" %>
                   </div>
                 </div>
                 <div class="genre-wrapper">
-                  <div class="genre-5 genre">
+                  <div class="genre">
                     <img src="img/top_g_5.svg">
-                    <%= link_to t("article.category.culture"), filter_path(category: "culture"), method: :post, remote: true, class: "genre-title" %>
+                    <%= link_to t("article.category.culture"), filter_path(category: "culture"), method: :post, remote: true, class: "genre-5" %>
                   </div>
                 </div>
                 <div class="genre-wrapper">
-                  <div class="genre-6 genre">
+                  <div class="genre">
                     <img src="img/top_g_6.svg">
-                    <%= link_to t("article.category.religion"), filter_path(category: "religion"), method: :post, remote: true, class: "genre-title" %>
+                    <%= link_to t("article.category.religion"), filter_path(category: "religion"), method: :post, remote: true, class: "genre-6" %>
                   </div>
                 </div>
               </div>
@@ -431,12 +434,12 @@
           <div class="whatis-title">
             <img  src="img/whatis.svg">
           </div>
-            <p>「さがん歴史地図」は、佐賀の歴史を時間軸にそって地図で見せる、</p>
-            <p class="line-spacing">佐賀の歴史の教科書です。</p>
-            <p>この時代、佐賀ではどこで何が起こっていたのか。</p>
-            <p>どんな文化があり、何が作られたのか。</p>
-            <p>そうした歴史上の数々のことを「できごと」として記事にし、</p>
-            <p>地図とともに時間軸にのせました。</p>
+            <p>「さがん歴史地図」は、佐賀の歴史を時間軸にそって地図で見せる、<br>
+            佐賀の歴史の教科書です。</p>
+            <p>この時代、佐賀ではどこで何が起こっていたのか。<br>
+            どんな文化があり、何が作られたのか。<br>
+            そうした歴史上の数々のことを「できごと」として記事にし、<br>
+            地図とともに時間軸にのせました。</p>
         </div>
       </div> <!--title-wrapperの閉じダグ-->
 
@@ -445,15 +448,15 @@
           <img src="img/howto.jpg">
         </div>
         <div class="howto-text">
-          <h2>使い方</h2>
-          <p >縦にスクロールすると歴史が流れ、
-          <p>地図上のポイントをクリックすると右側に「できごと」の詳細が現れます。</p>
-          <p>また、上部のメニュー「できごとの分類でみる」からできごとの分類、</p>
-          <p>たとえば「政治」のできごとにしぼって表示することができますし、</p>
-          <p class="line-spacing">「地区別の分類でみる」から自分が住んでいる地域にしぼって表示することもできます。</p>
-          <p>自分が住んでいる地域の近くで何が起こっていたのか。</p>
-          <p>そしてそのとき佐賀県全体では何が起こっていたのか。</p>
-          <p class="line-spacing">歴史を知ると佐賀の風景が今までとは変わって見え、豊かに色づきます。</p>
+          <h2>つかいかた</h2>
+          <p>縦にスクロールすると歴史が流れ、<br>
+          地図上のポイントをクリックすると右側に「できごと」の詳細が現れます。<br>
+          また、上部のメニュー「できごとの分類でみる」からできごとの分類、<br>
+          たとえば「政治」のできごとにしぼって表示することができますし、<br>
+          「地区別の分類でみる」から自分が住んでいる地域にしぼって表示することもできます。</p>
+          <p>自分が住んでいる地域の近くで何が起こっていたのか。<br>
+          そしてそのとき佐賀県全体では何が起こっていたのか。<br>
+          歴史を知ると佐賀の風景が今までとは変わって見え、豊かに色づきます。</p>
           <p>ふるさと・佐賀の歴史を、時代の流れとともに学んでみましょう。</p>
         </div>
       </div>

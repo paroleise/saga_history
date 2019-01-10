@@ -4,33 +4,33 @@ module ArticlesHelper
   def top_ruler(division)
     case division
     when "jomon" then
-      "縄文時代の上"
+      "石器時代"
     when "yayoi" then
-      "弥生時代の上"
+      "前4世紀"
     when "kofun" then
-      "古墳時代の上"
+      "前3世紀中頃"
     when "asuka" then
-      "飛鳥時代の上"
+      "592年"
     when "heian" then
-      "平安時代の上"
+      "794年"
     when "kamakura" then
-      "鎌倉時代の上"
+      "1133年"
     when "muromachi" then
-      "室町時代の上"
+      "1336年"
     when "azuchi" then
-      "安土桃山の上"
+      "1573年"
     when "edofirst" then
-      "江戸前期の上"
+      "1603年"
     when "edolast" then
-      "江戸後期の上"
+      "1729年"
     when "meiji" then
-      "明治時代の上"
+      "1868年"
     when "taisho" then
-      "大正時代の上"
+      "1912年"
     when "showa" then
-      "昭和時代の上"
+      "1926年"
     when "heisei" then
-      "平成時代の上"
+      "1989年"
     else
       nil
     end
@@ -39,33 +39,33 @@ module ArticlesHelper
   def  bottom_ruler(division)
     case division
     when "jomon" then
-      "縄文時代の下"
+      "前4世紀"
     when "yayoi" then
-      "弥生時代の下"
+      "後3世紀中頃"
     when "kofun" then
-      "古墳時代の下"
+      "592年"
     when "asuka" then
-      "飛鳥時代の下"
+      "794年"
     when "heian" then
-      "平安時代の下"
+      "1185年"
     when "kamakura" then
-      "鎌倉時代の下"
+      "1336年"
     when "muromachi" then
-      "室町時代の下"
+      "1573年"
     when "azuchi" then
-      "安土桃山の下"
+      "1603年"
     when "edofirst" then
-      "江戸前期の下"
+      "1729年"
     when "edolast" then
-      "江戸後期の下"
+      "1868年"
     when "meiji" then
-      "明治時代の下"
+      "1912年"
     when "taisho" then
-      "大正時代の下"
+      "1926年"
     when "showa" then
-      "昭和時代の下"
+      "1989年"
     when "heisei" then
-      "平成時代の下"
+      "2019年"
     else
       nil
     end
