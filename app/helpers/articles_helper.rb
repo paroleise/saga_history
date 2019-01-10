@@ -36,7 +36,7 @@ module ArticlesHelper
     end
   end
 
-  def  bottom_ruler(division)
+  def bottom_ruler(division)
     case division
     when "jomon" then
       "縄文時代の下"
@@ -69,10 +69,6 @@ module ArticlesHelper
     else
       nil
     end
-  end
-
-  def article?
-    controller.action_name != 'list' && controller.action_name != 'new' && controller.action_name != 'login'
   end
 
 

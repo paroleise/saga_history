@@ -42,7 +42,6 @@ var defaults = {
 Quilljs.setDefaults(defaults)
 
 
-
 $(function(){
   $('#list, .nav-left a').click(function(){
     $('.navigation').css("display","none");
