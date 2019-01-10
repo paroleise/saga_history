@@ -36,7 +36,7 @@ module ArticlesHelper
     end
   end
 
-  def  bottom_ruler(division)
+  def bottom_ruler(division)
     case division
     when "jomon" then
       "前4世紀"

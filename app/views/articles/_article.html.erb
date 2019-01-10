@@ -61,7 +61,6 @@
   </div>
 </div>
 
-
 <script>
 // このスクリプトタグ内に書くこと
 // 共通部分やアセット内に書くとloadが発火しません。
@@ -110,18 +109,18 @@
     });
   });
 
-//記事内スクロールを優先
-$(".allowScroll").hover(
-  function () {
-    $.scrollify.disable();
-  },
-  function () {
-    $.scrollify.enable();
-  }
-);
+  //記事内スクロールを優先
+  $(".allowScroll").hover(
+    function () {
+      $.scrollify.disable();
+    },
+    function () {
+      $.scrollify.enable();
+    }
+  );
 
 
-//ページ内ジャンプでのスクロール
+  //ページ内ジャンプでのスクロール
 
   var scrollElm = (function() {
     if('scrollingElement' in document) {
