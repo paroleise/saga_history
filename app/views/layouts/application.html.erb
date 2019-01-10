@@ -18,7 +18,7 @@
     <header>
       <div class="container-fluid">
         <nav class="nav-left">
-          <% if session[:mochi_id] %>
+          <% if session[:mochi_id] || top? %>
             <%= link_to "TOP", root_path %>
           <% else %>
             <%= link_to "TOP", top_path, method: :post,remote: true %>
