@@ -31,7 +31,7 @@
         <nav class="nav-right">
           <ul>
             <li><%= link_to "全体でみる", filter_path, method: :post, remote: true, class: "toArticle" %></li>
-            <li><%= link_to "できごとの分類でみる", void_path, method: :post, remote: true, class: "void_path toArticle"  %>
+            <li><%= link_to "できごとの分類でみる", void_path, method: :post, remote: true, class: "void_path"  %>
               <ul class="abs">
                 <li>
                   <%= link_to t("article.category.government"), filter_path(category: "government"), method: :post, remote: true, class: "toArticle title-government" %>
@@ -50,7 +50,7 @@
                 </li>
               </ul>
             </li>
-            <li><%= link_to "地区別の分類でみる", void_path, method: :post, remote: true, class: "void_path toArticle" %>
+            <li><%= link_to "地区別の分類でみる", void_path, method: :post, remote: true, class: "void_path" %>
               <ul class="abs">
                 <li>
                   <%= link_to t("article.region.saga"), filter_path(region: "saga"), method: :post, remote: true, class: "toArticle" %>
