@@ -43,7 +43,7 @@ Quilljs.setDefaults(defaults)
 
 
 $(function(){
-  $('#list, .nav-left a').click(function(){
+  $('#list, .nav-left a, .toInfo').click(function(){
     $('.navigation').css("display","none");
   })
 

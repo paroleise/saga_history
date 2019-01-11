@@ -23,7 +23,7 @@
               <%= image_tag "/img/header_title.svg", class: "top-title-img" %>
             <% end %>
           <% else %>
-            <%= link_to root_path, class: "top-title" do %>
+            <%= link_to root_path, method: :post, remote: true, class: "top-title" do %>
               <%= image_tag "/img/header_title.svg", class: "top-title-img" %>
             <% end %>
           <% end %>
@@ -70,8 +70,20 @@
               </ul>
             </li>
             <li class="nav-right-partition">/</li> <!--区切りのための装飾-->
-            <li><%= link_to "偉人一覧", figure_path, class: "historycal-parsons" %></li>
-            <li><%= link_to "制作者情報", notes_path, class: "notes" %></li>
+            <li>
+              <% if list? %>
+                <%= link_to "偉人一覧", figure_path, class: "historycal-parsons toInfo" %>
+              <% else %>
+                <%= link_to "偉人一覧", figure_path, method: :post, remote: true, class: "historycal-parsons toInfo" %>
+              <% end %>
+            </li>
+            <li>
+              <% if list? %>
+                <%= link_to "制作者情報", notes_path, class: "notes toInfo" %>
+              <% else %>
+                <%= link_to "制作者情報", notes_path, method: :post, remote: true, class: "notes toInfo" %>
+              <% end %>
+            </li>
             <% if session[:mochi_id] %>
               <li>
                 <%= link_to "記事を書く",  list_path, method: :post, remote: true, class: "text-info", id: "list" %>

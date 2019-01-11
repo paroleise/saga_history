@@ -8,8 +8,10 @@ Rails.application.routes.draw do
 	post "content", to: "articles#content", as: "content"
 	post "filter", to: "articles#filter", as: "filter"
 	post "logout", to: "articles#logout", as: "logout"
-	get "figure", to: "top#figure", as: "figure"
-	get "notes", to: "top#notes", as: "notes"
+	get "figure", to: "top#figure", as: "figure_get"
+	post "figure", to: "top#figure", as: "figure"
+	get "notes", to: "top#notes", as: "notes_get"
+	post "notes", to: "top#notes", as: "notes"
 	get "login", to: "articles#login", as: "login"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
  	root "articles#index"

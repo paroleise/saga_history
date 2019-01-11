@@ -71,5 +71,9 @@ module ArticlesHelper
     end
   end
 
+  def list?
+    controller.action_name == 'list'
+  end
+
 
 end
