@@ -38,16 +38,6 @@ header {
     display: flex;
   	justify-content: space-between;
     font-weight: bold;
-    nav a{
-        padding: .3rem;
-        color: $black; //TODO:: hoverの動作
-        vertical-align: middle;
-        &:hover {
-          color: $black;
-          opacity: 0.4;
-          transition: all 0.3s;
-        }
-    }
     .nav-right-partition{
     font-size: 2rem;
     font-weight: normal;
@@ -64,10 +54,22 @@ header {
   }
 }
 
+.nav-left {
+  width: 180px;
+  margin-top: -0.3rem;
+  margin-left: 30px;
+}
 
-
-
-
+.nav-right a {
+  padding: .3rem;
+  color: $black; //TODO:: hoverの動作
+  vertical-align: middle;
+  &:hover {
+    color: $black;
+    opacity: 0.4;
+    transition: all 0.3s;
+  }
+}
 //ヘッダー右のドロップダウン
 .nav-right ul {
   display: flex;
