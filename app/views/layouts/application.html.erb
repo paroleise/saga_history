@@ -19,9 +19,13 @@
       <div class="container-fluid">
         <nav class="nav-left">
           <% if session[:mochi_id] || top? %>
-            <%= link_to "TOP", root_path %>
+            <%= link_to root_path, class: "top-title" do %>
+              <%= image_tag "/img/header_title.svg", class: "top-title-img" %>
+            <% end %>
           <% else %>
-            <%= link_to "TOP", top_path, method: :post,remote: true %>
+            <%= link_to root_path, class: "top-title" do %>
+              <%= image_tag "/img/header_title.svg", class: "top-title-img" %>
+            <% end %>
           <% end %>
         </nav>
         <nav class="nav-right">
@@ -30,19 +34,19 @@
             <li><%= link_to "できごとの分類でみる", void_path, method: :post, remote: true, class: "void_path toArticle"  %>
               <ul class="abs">
                 <li>
-                  <%= link_to t("article.category.government"), filter_path(category: "government"), method: :post, remote: true, class: "toArticle" %>
+                  <%= link_to t("article.category.government"), filter_path(category: "government"), method: :post, remote: true, class: "toArticle title-government" %>
                 </li>
                 <li>
-                  <%= link_to t("article.category.economy"), filter_path(category: "economy"), method: :post, remote: true, class: "toArticle" %>
+                  <%= link_to t("article.category.economy"), filter_path(category: "economy"), method: :post, remote: true, class: "toArticle title-economy" %>
                 </li>
                 <li>
-                  <%= link_to t("article.category.technology"), filter_path(category: "technology"), method: :post, remote: true, class: "toArticle" %>
+                  <%= link_to t("article.category.technology"), filter_path(category: "technology"), method: :post, remote: true, class: "toArticle title-technology" %>
                 </li>
                 <li>
-                  <%= link_to t("article.category.culture"), filter_path(category: "culture"), method: :post, remote: true, class: "toArticle" %>
+                  <%= link_to t("article.category.culture"), filter_path(category: "culture"), method: :post, remote: true, class: "toArticle title-culture" %>
                 </li>
                 <li>
-                  <%= link_to t("article.category.religion"), filter_path(category: "religion"), method: :post, remote: true, class: "toArticle" %>
+                  <%= link_to t("article.category.religion"), filter_path(category: "religion"), method: :post, remote: true, class: "toArticle title-religion" %>
                 </li>
               </ul>
             </li>
@@ -65,6 +69,9 @@
                 </li>
               </ul>
             </li>
+            <li class="nav-right-partition">/</li> <!--区切りのための装飾-->
+            <li><%= link_to "偉人一覧", figure_path, class: "historycal-parsons" %></li>
+            <li><%= link_to "制作者情報", notes_path, class: "notes" %></li>
             <% if session[:mochi_id] %>
               <li>
                 <%= link_to "記事を書く",  list_path, method: :post, remote: true, class: "text-info", id: "list" %>
