@@ -1,0 +1,50 @@
+<div class="container mt-5 pt-5">
+<h4>記事のHTMLの編集</h4>
+  <% @article.errors.full_messages.each do |message| %>
+    <div class="form-error">
+        <%= message %>
+    </div>
+  <% end %>
+
+  <%= simple_form_for @article, html: { class: 'mt-5' } do |f| %>
+  <div class="w-75">
+    <%= f.input :title, required: true%>
+  </div>
+  <div class="row pl-3 mb-3">
+    <%= f.input :region, required: true, collection: [["佐賀地区", :saga], ["三神地区", :sanshin], ["杵藤地区", :kito], ["唐松地区", :karamatsu], ["伊西地区", :isai]] %>
+    <%= f.input :category, required: true, collection: [["政治", :government], ["経済", :economy], ["技術", :technology], ["文化", :culture], ["宗教", :religion]] %>
+    <%= f.input :division, required: true, collection: [["縄文以前", :jomon], ["弥生", :yayoi], ["古墳", :kofun], ["飛鳥・奈良", :asuka], ["平安", :heian], ["鎌倉", :kamakura], ["室町", :muromachi], ["安土桃山", :azuchi], ["江戸[前半]", :edofirst], ["江戸[後半]", :edolast], ["明治", :meiji], ["大正", :taisho], ["昭和", :showa], ["平成", :heisei]] %>
+    <%= f.input :year %>
+    <%= f.input :coordinateX %>
+    <%= f.input :coordinateY %>
+  </div>
+  <h3>
+    画像を送信するための手順
+  </h3>
+  <p>
+    1. アプリの <b>public/img/article</b> フォルダ内に、送信したい画像を置いておく<br />
+    2. このページで、記事に載せたい画像のパスを以下のように書く。<br />
+    <b><pre><code>&lt;img src=&quot;img/article/画像ファイル&quot;&gt;</code></pre></b>
+  </p>
+  <p><small>コピペ用</small><br />
+    <code>&lt;img src=&quot;img/article/&quot;&nbsp;&gt;</code>
+  </p>
+  <p>注意<br />
+    <b class="text-danger">
+      ※ 絶対にこのエディタ内で<code>&lt;script&gt;</code>タグを使用しないこと。
+    </b><br />
+    ・wysiwygの方では画像が表示されないが、気にしないこと。<br />
+    ・スタイルは個々に適用するなら&lt;img&gt;にstyle属性使うのが楽だけど
+    "max-width" みたいなのを共通化したかったらCSSにプロパティ書いて&lt;img&gt;にclass属性に追加する方がベター。
+  </p>
+
+
+
+
+    <%= f.input :content, required: true, :as => :text, input_html: { :style=> 'width: 100%;', :rows => 20} %>
+    <%= f.input :hidden, as: :boolean, checked_value: true, unchecked_value: 0 %>
+    <%= f.button :submit, class: 'btn-primary mt-4' %>
+
+  <% end %>
+
+</div>

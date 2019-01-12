@@ -4,6 +4,12 @@
 @import "variable";
 
 
+.list-table {
+  th, td {
+    font-size: 0.85rem;
+  }
+}
+
 //記事内部のCSSはここに
 // _content.html.erbを参照する
 

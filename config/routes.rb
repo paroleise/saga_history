@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 	resources :articles
+	get "articles/:id/edit_raw", to: "articles#edit_raw", as: "edit_raw"
 	post "authorize" => "articles#authorize"
 	post "list", to: "articles#list", as: "list"
 	get "list", to: "articles#list", as: "list_get"
