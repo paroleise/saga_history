@@ -24,7 +24,7 @@
       <div class="gio-dot abs">
         <% articles_div.each do |article| %>
           <% if article %>
-            <%= link_to content_path(region: article.region, division: division), method: :post, remote: true, class: "dotlink" do %>
+            <%= link_to content_path(division: division, id: article.id), method: :post, remote: true, class: "dotlink" do %>
               <span class="dot abs dot-<%= article.category %>" style="left: <%= article.coordinateX %>%; top: <%= article.coordinateY %>%;">●</span>
             <% end %>
           <% end %>

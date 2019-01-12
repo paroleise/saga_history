@@ -23,7 +23,11 @@ class ArticlesController < ApplicationController
 
   def content
     @division = params[:division]
-    @article = Article.where(region: params[:region], division: params[:division]).order(created_at: :desc).last
+    if params[:id]
+      @article = Article.find(params[:id])
+    else
+      @article = Article.where(division: params[:division]).order(created_at: :desc).last
+    end
   end
 
   def list
