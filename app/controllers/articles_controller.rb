@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   include AjaxHelper
-  before_action :request_password, only: [:new, :list, :edit]
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :request_password, only: [:new, :list, :edit, :edit_raw]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :edit_raw]
   protect_from_forgery except: :authorize
 
   def index
@@ -48,6 +48,10 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
+  end
+
+  def edit_raw
     @article = Article.find(params[:id])
   end
 

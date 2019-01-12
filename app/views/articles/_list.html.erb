@@ -7,7 +7,7 @@
     <%= link_to "ログアウト", logout_path, method: :post, class: "ml-3" %>
     <% end %>
   </p>
-  <table class="table container table-hover">
+  <table class="table container table-hover list-table">
     <thead>
       <tr>
         <th><%= t("activerecord.attributes.article.region") %></th>
@@ -39,6 +39,7 @@
           <% end%>
         </td>
         <td><%= link_to "編集", edit_article_path(article) %></td>
+        <td><%= link_to "HTML編集",  edit_raw_path(article) %></td>
       </tr>
     <% end %>
     </tbody>
