@@ -33,8 +33,7 @@ var defaults = {
       ['blockquote', 'code-block'],
       [{ 'list': 'ordered'}, { 'list': 'bullet' }],
       ['clean'],
-      ['link'],
-      ['image']
+      ['link']
     ]
   },
   placeholder: '記事を入力してください',
