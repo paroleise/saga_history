@@ -42,12 +42,24 @@ var defaults = {
 Quilljs.setDefaults(defaults)
 
 
+$(".allowScroll").hover(
+  function () {
+    $.scrollify.disable();
+  },
+  function () {
+    $.scrollify.enable();
+  }
+);
+
 $(function(){
   $('#list, .nav-left a, .toInfo').click(function(){
     $('.navigation').css("display","none");
+      $.scrollify.disable();
   })
 
   $('.toArticle').click(function(){
     $('.navigation').css("display","block");
+    $.scrollify.enable();
   })
+
 });
