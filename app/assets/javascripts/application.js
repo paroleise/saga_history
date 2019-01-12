@@ -24,33 +24,32 @@
 
 //wysiwyg設定
 var defaults = {
-        theme: 'snow',
-        modules: {
-            toolbar: [
-                [{ 'header': [1, 2, false] }],
-                [{ 'color': [] }, { 'background': [] }],
-                ['bold', 'italic', 'underline', 'strike'],
-                ['blockquote', 'code-block'],
-                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                ['clean'],
-                ['link'],
-                ['image']
-            ]
-        },
-        placeholder: '記事を入力してください',
-    };
+  theme: 'snow',
+  modules: {
+    toolbar: [
+      [{ 'header': [1, 2, false] }],
+      [{ 'color': [] }, { 'background': [] }],
+      ['bold', 'italic', 'underline', 'strike'],
+      ['blockquote', 'code-block'],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      ['clean'],
+      ['link'],
+      ['image']
+    ]
+  },
+  placeholder: '記事を入力してください',
+};
 Quilljs.setDefaults(defaults)
 
 
 $(function(){
   $('#list, .nav-left a, .toInfo').click(function(){
     $('.navigation').css("display","none");
-      $.scrollify.disable();
+    $.scrollify.disable();
   })
 
   $('.toArticle').click(function(){
     $('.navigation').css("display","block");
     $.scrollify.enable();
   })
-
 });
