@@ -13,8 +13,10 @@
   <%= f.input :category, required: true, collection: [["政治", :government], ["経済", :economy], ["技術", :technology], ["文化", :culture], ["宗教", :religion]] %>
   <%= f.input :division, required: true, collection: [["縄文以前", :jomon], ["弥生", :yayoi], ["古墳", :kofun], ["飛鳥・奈良", :asuka], ["平安", :heian], ["鎌倉", :kamakura], ["室町", :muromachi], ["安土桃山", :azuchi], ["江戸[前半]", :edofirst], ["江戸[後半]", :edolast], ["明治", :meiji], ["大正", :taisho], ["昭和", :showa], ["平成", :heisei]] %>
   <%= f.input :year %>
-  <%= f.input :coordinateX %>
-  <%= f.input :coordinateY %>
+  <%= f.input :coordinateX, class: "input-coordinate" %>
+  <%= f.input :coordinateY, class: "input-coordinate" %>
+  <%= f.input :regionCoordinateX, class: "input-coordinate" %>
+  <%= f.input :regionCoordinateY, class: "input-coordinate" %>
 </div>
   <%= f.text_field :content, required: true, class: "quill_container" %> <!--quill_containerってクラスは消さないように-->
   <%= f.input :hidden, as: :boolean, checked_value: true, unchecked_value: 0 %>

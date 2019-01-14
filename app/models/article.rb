@@ -7,6 +7,7 @@ validates :category, presence: true
 validates :content, presence: true
 validates :coordinateX, presence: true
 validates :coordinateY, presence: true
-
+validates :regionCoordinateX, presence: true
+validates :regionCoordinateY, presence: true
 
 end
