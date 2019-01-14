@@ -1,14 +1,4 @@
-# README
-
-# pullしたらやること
-- bundle exec rails db:migrate → マイグレーションファイルのコンパイルを実行する
-- ブランチを切る(切ろう)
-
-# スタイルを整える
-- app > views > articles で html
-- app > views > layouts > application.html.erb headerなどの共通部分のレイアウト
-- app > assets > stylesheetでCSS
-
+# README  
 # Articleモデルの中身
 "title"  
 "content"  
@@ -20,13 +10,22 @@
 "year" → 年号  
 "hidden" →非表示にするなら Boolean型  
 "coordinateX" → ドットのX座標(左から) int型  
-"coordinateY" → ドットのY座標(上から)int型  
+"coordinateY" → ドットのY座標(上から)int型 
+"regionCoordinateX" → 地域別表示の際のX座標
+"regionCoordinateY" → 地域別表示の際のY座標 
+  
+# ログイン  
+/login  
+→.envで設定したパスワードを入力  
+    
+# 画像ファイルを入れる場所  
+- public > img の中にいれる  
+html.erbでの呼び出しは　``` <%= image_tag("/img/gazou.jpg", class: "hoge") %> ``` と入力する  
 
+# Figureインスタンスの作成  
+app/controllers/top_controller.rbのfigureアクションで既存コードをコピペしてfigure[]に格納  
+モーダル用のHTMLコードは"", ''のエスケープに注意すること  
 
-# ログインするには
-urlに /login を打つ
-→.envで設定したパスワードを入力
+#記事の画像アップロード
+Wysiwyg内では画像ファイルを上げずに、HTML編集で<img src="/img/article/hogehoge.jpg">を追加する。
 
-# 画像ファイルを入れる場所
-- public > img の中にいれる
-html.erbでの呼び出しは　``` <%= image_tag("/img/gazou.jpg", class: "hoge") %> ``` と入力する
