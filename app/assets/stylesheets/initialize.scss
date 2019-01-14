@@ -8,6 +8,10 @@
   cursor: default;
 }
 
+main {
+  min-height: calc(90vh - 30px);
+}
+
 //浮動要素
 .rel {
   position: relative;

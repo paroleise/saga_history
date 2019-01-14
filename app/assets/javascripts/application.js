@@ -45,11 +45,18 @@ $(function(){
   $('#list, .nav-left a, .toInfo').click(function(){
     $('.navigation').css("display","none");
     $.scrollify.disable();
+    setTimeout(function(){
+      $('footer').removeClass("up-footer");
+  	},1000);
   })
 
   $('.toArticle').click(function(){
     $('.navigation').css("display","block");
     $.scrollify.enable();
+    setTimeout(function(){
+      $('footer').addClass("up-footer");
+  	},1000);
+
   })
 });
 

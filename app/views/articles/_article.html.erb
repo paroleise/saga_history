@@ -1,8 +1,4 @@
 <%#メインページ%>
-
-
-
-
 <% divisions.each_with_index do |division, i| %> <%# 時代ごとに1つのブロックをループ%>
   <% articles_div = articles.where(division: division) %>
   <div class="<%= i % 2 != 0 ? "background_even" : "background_odd"%>">
@@ -59,6 +55,21 @@
   </div>
 <% end %>
 
+<%#記事ページの一番下%>
+<div class="article-footer background_odd rel">
+
+  <div class="pt-5">
+    ここに記事ページのフッター
+  </div>
+
+  <div class="scale scale-top abs">
+    <div class="scale-bar"></div>2019
+  </div>
+  <div class="scale scale-foot abs">
+    <div class="scale-bar"></div>???
+  </div>
+
+</div>
 
 <%# 固定サイドバー %>
 <div class="sidebar">
@@ -75,7 +86,7 @@
   $(function() {
     var current;
     $.scrollify({
-      section : ".article",
+      section : ".article, .article-footer",
       sectionName : "section-name",
       interstitialSection : "",
       easing: "easeOutExpo",

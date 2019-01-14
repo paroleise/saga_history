@@ -1,0 +1,78 @@
+<header>
+  <div class="container-fluid">
+    <nav class="nav-left">
+      <% if session[:mochi_id] || top? %>
+        <%= link_to root_path, class: "top-title" do %>
+          <%= image_tag "/img/header_title.svg", class: "top-title-img" %>
+        <% end %>
+      <% else %>
+        <%= link_to root_path, method: :post, remote: true, class: "top-title" do %>
+          <%= image_tag "/img/header_title.svg", class: "top-title-img" %>
+        <% end %>
+      <% end %>
+    </nav>
+    <nav class="nav-right">
+      <ul>
+        <li><%= link_to "全体でみる", filter_path, method: :post, remote: true, class: "toArticle" %></li>
+        <li><%= link_to "できごとの分類でみる", void_path, method: :post, remote: true, class: "void_path"  %>
+          <ul class="abs">
+            <li>
+              <%= link_to t("article.category.government"), filter_path(category: "government"), method: :post, remote: true, class: "toArticle title-government" %>
+            </li>
+            <li>
+              <%= link_to t("article.category.economy"), filter_path(category: "economy"), method: :post, remote: true, class: "toArticle title-economy" %>
+            </li>
+            <li>
+              <%= link_to t("article.category.technology"), filter_path(category: "technology"), method: :post, remote: true, class: "toArticle title-technology" %>
+            </li>
+            <li>
+              <%= link_to t("article.category.culture"), filter_path(category: "culture"), method: :post, remote: true, class: "toArticle title-culture" %>
+            </li>
+            <li>
+              <%= link_to t("article.category.religion"), filter_path(category: "religion"), method: :post, remote: true, class: "toArticle title-religion" %>
+            </li>
+          </ul>
+        </li>
+        <li><%= link_to "地区別の分類でみる", void_path, method: :post, remote: true, class: "void_path" %>
+          <ul class="abs">
+            <li>
+              <%= link_to t("article.region.saga"), filter_path(region: "saga"), method: :post, remote: true, class: "toArticle" %>
+            </li>
+            <li>
+              <%= link_to t("article.region.sanshin"), filter_path(region: "sanshin"), method: :post, remote: true, class: "toArticle" %>
+            </li>
+            <li>
+              <%= link_to t("article.region.kito"), filter_path(region: "kito"), method: :post, remote: true, class: "toArticle" %>
+            </li>
+            <li>
+              <%= link_to t("article.region.karamatsu"), filter_path(region: "karamatsu"), method: :post, remote: true, class: "toArticle" %>
+            </li>
+            <li>
+              <%= link_to t("article.region.isai"), filter_path(region: "isai"), method: :post, remote: true, class: "toArticle" %>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-right-partition">/</li> <!--区切りのための装飾-->
+        <li>
+          <% if list? %>
+            <%= link_to "偉人一覧", figure_path, class: "historycal-parsons toInfo" %>
+          <% else %>
+            <%= link_to "偉人一覧", figure_path, method: :post, remote: true, class: "historycal-parsons toInfo" %>
+          <% end %>
+        </li>
+        <li>
+          <% if list? %>
+            <%= link_to "制作者情報", notes_path, class: "notes toInfo" %>
+          <% else %>
+            <%= link_to "制作者情報", notes_path, method: :post, remote: true, class: "notes toInfo" %>
+          <% end %>
+        </li>
+        <% if session[:mochi_id] %>
+          <li>
+            <%= link_to "記事を書く",  list_path, method: :post, remote: true, class: "text-info", id: "list" %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
