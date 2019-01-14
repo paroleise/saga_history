@@ -176,6 +176,9 @@ header {
   &.scale-bottom {
     top: 94%;
   }
+  &.scale-foot {
+    top: 89%;
+  }
 }
 .scale-bar {
   width: 30px;
@@ -183,9 +186,7 @@ header {
   background-color: #000;
   vertical-align: middle;
   display: inline-block;
-
 }
-
 
 
 //サイドナビゲーション
@@ -224,4 +225,30 @@ header {
     &.active {
       background: #000;
     }
+}
+
+//フッタ
+
+footer{
+  height: 30px;
+  width: 100%;
+  float: left;
+  background-color: white;
+  padding: 0 15px;
+  &.up-footer {
+    position: relative;
+    top: -30px;
+    z-index: 50000;
+  }
+}
+
+.copyright{
+  font-size: 10px;
+  line-height: 30px;
+  text-align: middle;
+}
+
+.article-footer {
+  height: 100vh;
+  width: 100%;
 }
