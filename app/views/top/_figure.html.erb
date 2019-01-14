@@ -1,2 +1,50 @@
 <!--ここに偉人一覧ページ-->
 <h3 class="mt-5">偉人一覧</h3>
+<div class="figure-wrapper">
+  <% @figures.each_with_index do |figure, i| %>
+    <div class="figure-block">
+      <div class="figure-job rel text-center" style="background-color: <%= figure.color %>;">
+        <%= figure.job %>
+      </div>
+      <div class="figure-image">
+        <img src="http://placehold.jp/200x200.png" id="figure-<%= i %>"> <%#= image_tag "img/figure/#{figure.path}", class: "hogehoge" %> <!-- public/figure/にfigure.pathで画像を保存する-->
+      </div>
+      <div class="figure-catchcopy text-center">
+        <%= figure.catchcopy %>
+      </div>
+      <div class="figure-name text-center">
+        <%= figure.name %>
+      </div>
+      <p class="figure-period text-center">
+        <%= figure.birth %> - <%= figure.death %>
+      </p>
+    </div>
+    <script>
+      jQuery(function($) {
+        $("#figure-<%= i %>").click(function(){
+          $(".modal-wrapper").fadeIn();
+          $("#modalName").html("<%== figure.name %>")
+          $("#modalPeriod").html("<%= figure.birth %> - <%= figure.death %>")
+          $("#modalText").html("<%== figure.script %>")
+        })
+      });
+    </script>
+  <% end %>
+</div>
+
+<div class="modal-wrapper" id="modal">
+  <div class="figure-modal rel">
+    <div class="close-modal abs">
+      閉じる
+    </div>
+    <div id="modalName" class="modal-name">
+      <!--この中にモーダルの人物名がJSによって挿入される-->
+    </div>
+    <div id="modalPeriod" class="modal-period">
+      <!--この中にモーダルの寿命がJSによって挿入される-->
+    </div>
+    <div id="modalText" class="modal-text">
+      <!--この中にモーダルの文章がJSによって挿入される-->
+    </div>
+  </div>
+</div>

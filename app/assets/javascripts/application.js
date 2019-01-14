@@ -52,3 +52,20 @@ $(function(){
     $.scrollify.enable();
   })
 });
+
+
+//モーダル閉じる
+$(document).click(function(event) {
+  if(!$(event.target).closest('.figure-modal, .figure-image img').length) {
+    $('.modal-wrapper').fadeOut();
+  }
+  $('.close-modal').click(function(){
+    $('.modal-wrapper').fadeOut();
+  });
+});
+
+$(window).keyup(function(e){
+	if(e.keyCode == 27){
+    $('.modal-wrapper').fadeOut();
+  }
+});
