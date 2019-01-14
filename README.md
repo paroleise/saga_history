@@ -1,5 +1,6 @@
 # README  
-# Articleモデルの中身
+    
+## Articleモデルの中身
 "title"  
 "content"  
 "created_at"  
@@ -14,18 +15,18 @@
 "regionCoordinateX" → 地域別表示の際のX座標
 "regionCoordinateY" → 地域別表示の際のY座標 
   
-# ログイン  
+## ログイン  
 /login  
-→.envで設定したパスワードを入力  
+→```.env```で設定したパスワードを入力  
     
-# 画像ファイルを入れる場所  
+## 画像ファイルを入れる場所  
 - public > img の中にいれる  
-html.erbでの呼び出しは　``` <%= image_tag("/img/gazou.jpg", class: "hoge") %> ``` と入力する  
+```html.erb```での呼び出しは　``` <%= image_tag("/img/gazou.jpg", class: "hoge") %> ``` と入力する  
 
-# Figureインスタンスの作成  
+## Figureインスタンスの作成  
 app/controllers/top_controller.rbのfigureアクションで既存コードをコピペしてfigure[]に格納  
 モーダル用のHTMLコードは"", ''のエスケープに注意すること  
 
-#記事の画像アップロード
-Wysiwyg内では画像ファイルを上げずに、HTML編集で<img src="/img/article/hogehoge.jpg">を追加する。
+##記事の画像アップロード
+Wysiwyg内では画像ファイルを上げずに、HTML編集で```<img src="/img/article/hogehoge.jpg">```を追加する。
 
