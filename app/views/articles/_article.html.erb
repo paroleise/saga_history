@@ -20,7 +20,11 @@
 
 
       <%########################↓地図とドット##################################################%>
-      <%= image_tag("/img/maps/#{division}.png", class: "gio abs") %>
+      <% if @region %>
+        <%= image_tag("/img/maps/region/#{@region}.png", class: "gio abs #{"gio-" + @region}") %>
+      <% else %>
+        <%= image_tag("/img/maps/#{division}.png", class: "gio abs gio-common") %>
+      <% end %>
       <div class="gio-dot abs">
         <% articles_div.each do |article| %>
           <% if article %>
