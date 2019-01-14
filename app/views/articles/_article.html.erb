@@ -20,12 +20,24 @@
 
 
       <%########################↓地図とドット##################################################%>
-      <%= image_tag("/img/maps/#{division}.png", class: "gio abs") %>
+      <% if @region %>
+        <%= image_tag("/img/maps/region/#{@region}.png", class: "gio abs #{"gio-" + @region}") %>
+      <% else %>
+        <%= image_tag("/img/maps/#{division}.png", class: "gio abs gio-common") %>
+      <% end %>
       <div class="gio-dot abs">
         <% articles_div.each do |article| %>
           <% if article %>
             <%= link_to content_path(division: division, id: article.id), method: :post, remote: true, class: "dotlink" do %>
-              <span class="dot abs dot-<%= article.category %>" style="left: <%= article.coordinateX %>%; top: <%= article.coordinateY %>%;">●</span>
+
+              <% if @region %>
+                <span class="dot abs dot-<%= article.category %>" style="left: <%= article.regionCoordinateX %>%; top: <%= article.regionCoordinateY %>%;">●</span>
+                <% unless article.regionCoordinateX %>
+                  <span class="dot abs dot-<%= article.category %>" style="left: <%= article.coordinateX %>%; top: <%= article.coordinateY %>%;">×</span>
+                <% end %>
+              <% else %>
+                <span class="dot abs dot-<%= article.category %>" style="left: <%= article.coordinateX %>%; top: <%= article.coordinateY %>%;">●</span>
+              <% end %>
             <% end %>
           <% end %>
         <% end %>
@@ -35,13 +47,6 @@
       <div class="col-6 col-lg-5">
       </div>
       <%= image_tag "/img/era/#{@svg_category}/#{division}.svg", class: "era-svg abs" %>
-      <style>
-        .era-svg{
-          top: 17%;
-          left: 28%;
-          width: 17%;
-        }
-      </style>
 
       <%########################↓記事内容をリクエストに合わせてレンダリングしている (_content.html.erbを呼び出している)##################################################%>
       <div class="col-6 rel" style="margin: 0 -7rem 0 5rem;">

@@ -14,5 +14,7 @@ ja:
         year: 年号
         coordinateX: X座標
         coordinateY: Y座標
+        regionCoordinateX: 地域別X座標
+        regionCoordinateY: 地域別Y座標
         content: 記事内容
         hidden: 非公開にする

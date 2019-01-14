@@ -122,8 +122,15 @@ header {
   height: 100vh;
 }
 
+//タイトルSVG画像
+.era-svg{
+  top: 17%;
+  left: 28%;
+  width: 17%;
+}
+
+
 //地図とドット
-//#!!!! 元の画像の比率が 1640 × 1750 なので、縮尺合わせて指定すること
 .gio, .gio-dot {
   width: 1065px;
   height: 669px;

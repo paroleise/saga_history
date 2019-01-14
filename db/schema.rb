@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_142950) do
+ActiveRecord::Schema.define(version: 2019_01_14_042535) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2018_11_29_142950) do
     t.boolean "hidden", default: false, null: false
     t.integer "coordinateX"
     t.integer "coordinateY"
+    t.integer "regionCoordinateX"
+    t.integer "regionCoordinateY"
   end
 
   create_table "mochis", force: :cascade do |t|

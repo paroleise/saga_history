@@ -107,7 +107,7 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(
-      :title, :category, :region, :division, :year, :hidden, :content, :coordinateX, :coordinateY
+      :title, :category, :region, :division, :year, :hidden, :content, :coordinateX, :coordinateY, :regionCoordinateX, :regionCoordinateY
     )
   end
 
