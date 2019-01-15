@@ -1,50 +1,67 @@
 <!--ここに偉人一覧ページ-->
-<h3 class="mt-5">偉人一覧</h3>
-<div class="figure-wrapper">
-  <% @figures.each_with_index do |figure, i| %>
-    <div class="figure-block">
-      <div class="figure-job rel text-center" style="background-color: <%= figure.color %>;">
-        <%= figure.job %>
-      </div>
-      <div class="figure-image">
-        <img src="http://placehold.jp/200x200.png" id="figure-<%= i %>"> <%#= image_tag "img/figure/#{figure.path}", class: "hogehoge" %> <!-- public/figure/にfigure.pathで画像を保存する-->
-      </div>
-      <div class="figure-catchcopy text-center">
-        <%= figure.catchcopy %>
-      </div>
-      <div class="figure-name text-center">
-        <%= figure.name %>
-      </div>
-      <p class="figure-period text-center">
-        <%= figure.birth %> - <%= figure.death %>
-      </p>
+<div class="main-wrapper background_odd rel">
+  <div class="mt-5 figure-title abs">
+    <img src="/img/historicalperson.svg">
+  </div>
+  <div class="space"></div> <!--空div-->
+  <div class="figure-container">
+    <div class="text-wrapper">
+      <p>著名な「佐賀の7賢人」をはじめ、佐賀県は多くの偉人を輩出しています。<br>
+      その中には、佐賀にとどまらず東京や大阪、京都などの全国区で活躍した偉人も少なくありません。<br>
+      ここでは、幕末・明治を中心として、活躍場所に関わらず佐賀で生まれ育った偉人たちを紹介します。<br>
+      （画像をクリックして詳細を表示）</p>
     </div>
-    <script>
-      jQuery(function($) {
-        $("#figure-<%= i %>").click(function(){
-          $(".modal-wrapper").fadeIn();
-          $("#modalName").html("<%== figure.name %>")
-          $("#modalPeriod").html("<%= figure.birth %> - <%= figure.death %>")
-          $("#modalText").html("<%== figure.script %>")
-        })
-      });
-    </script>
-  <% end %>
-</div>
-
-<div class="modal-wrapper" id="modal">
-  <div class="figure-modal rel">
-    <div class="close-modal abs">
-      閉じる
-    </div>
-    <div id="modalName" class="modal-name">
-      <!--この中にモーダルの人物名がJSによって挿入される-->
-    </div>
-    <div id="modalPeriod" class="modal-period">
-      <!--この中にモーダルの寿命がJSによって挿入される-->
-    </div>
-    <div id="modalText" class="modal-text">
-      <!--この中にモーダルの文章がJSによって挿入される-->
+    <div class="figure-wrapper">
+      <% @figures.each_with_index do |figure, i| %>
+        <div class="figure-block">
+          <div class="figure-job rel text-center" style="background-color: <%= figure.color %>;">
+            <%= figure.job %>
+          </div>
+          <div class="figure-image">
+            <img src="http://placehold.jp/200x200.png" id="figure-<%= i %>"> <%#= image_tag "img/figure/#{figure.path}", class: "hogehoge" %> <!-- public/figure/にfigure.pathで画像を保存する-->
+          </div>
+          <div class="figure-catchcopy text-center">
+            <%= figure.catchcopy %>
+          </div>
+          <div class="figure-name text-center">
+            <%= figure.name %>
+          </div>
+          <p class="figure-period text-center">
+            <%= figure.birth %> - <%= figure.death %>
+          </p>
+        </div>
+        <script>
+          jQuery(function($) {
+            $("#figure-<%= i %>").click(function(){
+              $(".modal-wrapper").fadeIn();
+              $("#modalName").html("<%== figure.name %>")
+              $("#modalPeriod").html("<%= figure.birth %> - <%= figure.death %>")
+              $("#modalText").html("<%== figure.script %>")
+            })
+          });
+        </script>
+      <% end %>
     </div>
   </div>
+  <div class="space"></div>
+</div>
+
+  <div class="modal-wrapper" id="modal">
+    <div class="figure-modal rel">
+      <div class="close-modal abs">
+        <img src="/img/close.svg">
+      </div>
+      <div id="modalName" class="modal-name">
+        <!--この中にモーダルの人物名がJSによって挿入される-->
+      </div>
+      <div id="modalPeriod" class="modal-period">
+        <!--この中にモーダルの寿命がJSによって挿入される-->
+      </div>
+      <div id="modalText" class="modal-text">
+        <!--この中にモーダルの文章がJSによって挿入される-->
+
+      </div>
+    </div>
+  </div>
+
 </div>

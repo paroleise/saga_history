@@ -1,11 +1,46 @@
 @import "variable";
 
 //偉人一覧
+
+
+
+.space{
+  height: 180px;
+}
+
+.figure-container{
+  margin: auto;  
+  width: 80%;
+  background-color: white;
+  border: solid 3px black;
+  padding: 70px 0 50px;
+
+}
+
+.text-wrapper{
+  margin: 0 auto;
+  font-size: 0.95rem;
+  line-height: 1.75rem;
+  font-weight: bold;
+
+}
+
 .figure-wrapper {
   display: flex;
   flex-flow: wrap;
-  max-width: 1100px; //お好きに
+  max-width: 850px; //お好きに
   margin: auto;
+}
+
+.figure-title{
+  top: 110px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 25%;
+  max-width: 250px; 
+  z-index: 20;
 }
 
 .figure-block {
@@ -42,6 +77,25 @@
   }
 }
 
+.figure-catchcopy{
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.figure-name{
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.figure-period{
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 2px;
+
+}
+
 @media(max-width: 768px) { //一応
   .figure-block {
     width: 49.5%;
@@ -56,34 +110,69 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 100;
   display: none;
+  height: 100vh;
+  padding: 70px 20px 20px 20px;
 }
 
 .figure-modal {
   display: block;
   margin: 0 auto;
-  top: 15%;
+//  top: 10%;
   background-color: white;
   border: solid 3px #000;
-  width: 80%;
+  width: 100%;
   max-width: 1100px;
-  height: 60%;
-  min-height: 600px;
-  text-align: center;
+  height: 100%;
+  min-height: 400px;
+  vertical-align: middle;
   z-index: 100;
   overflow: scroll;
+  padding: 20px 170px;
 }
 
 .close-modal {
   right:  3%;
   top: 3%;
+  width: 40px;
   @include hover;
 }
 
 
 .modal-name {
+  font-size: 2.6rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.modal-period{
+  text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.modal-text{
+  display: block;  
+  margin: 0 auto;
+  width: 70%;
+  max-width: 800px
+}
+
+.modal-text h1{
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  margin-top: 30px;
+}
+
+.modal-text p {
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.75rem;
+  margin: 0;
 }
