@@ -248,7 +248,34 @@ footer{
   text-align: middle;
 }
 
+
+
+//記事ページフッタ
+
+
 .article-footer {
   height: 100vh;
   width: 100%;
+  padding-top: 20%;
+}
+
+.footer-icon {
+  margin: 0 auto;
+  text-align: center;
+  width: 30%;
+  margin-bottom: 60px;
+  img{
+    width: 438px;
+    height: 99px;
+  }
+}
+
+
+.footer-text{
+  font-size: 0.8rem;
+  color: #999;
+  line-height:  1.5rem;
+  margin-top: 50px;
+  text-align: center;
+  margin: 0 auto;
 }
