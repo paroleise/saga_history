@@ -18,7 +18,7 @@
             <%= figure.job %>
           </div>
           <div class="figure-image">
-            <img src="http://placehold.jp/200x200.png" id="figure-<%= i %>"> <%#= image_tag "img/figure/#{figure.path}", class: "hogehoge" %> <!-- public/figure/にfigure.pathで画像を保存する-->
+            <%= image_tag "/img/figure/#{figure.path}", id: "figure-#{i}" %>
           </div>
           <div class="figure-catchcopy text-center">
             <%= figure.catchcopy %>
