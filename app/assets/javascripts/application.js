@@ -89,8 +89,8 @@ $(function() {
 //記事ローディング
 $(function() {
   return $(document).on("ajax:before", ".dotlink", function(event) {
-    return $('#articleLoading').show();
+    return $('.articleLoading').show();
   }).on("ajax:complete", ".dotlink", function(event) {
-    return $('#articleLoading').hide();
+    return $('.articleLoading').hide();
   });
 });
