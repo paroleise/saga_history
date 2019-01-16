@@ -1,14 +1,8 @@
 <header>
   <div class="container-fluid">
     <nav class="nav-left">
-      <% if session[:mochi_id] || top? %>
-        <%= link_to root_path, class: "top-title" do %>
-          <%= image_tag "/img/header_title.svg", class: "top-title-img" %>
-        <% end %>
-      <% else %>
-        <%= link_to root_path, method: :post, remote: true, class: "top-title" do %>
-          <%= image_tag "/img/header_title.svg", class: "top-title-img" %>
-        <% end %>
+      <%= link_to root_path, class: "top-title" do %>
+        <%= image_tag "/img/header_title.svg", class: "top-title-img" %>
       <% end %>
     </nav>
     <nav class="nav-right">
