@@ -51,10 +51,10 @@ $(function(){
   })
 
   $('.toArticle').click(function(){
-    $('.navigation').css("display","block");
     $.scrollify.enable();
     setTimeout(function(){
       $('footer').addClass("up-footer");
+      $('.navigation').css("display","block");
   	},1000);
 
   })
@@ -75,4 +75,22 @@ $(window).keyup(function(e){
 	if(e.keyCode == 27){
     $('.modal-wrapper').fadeOut();
   }
+});
+
+//ページローディング
+$(function() {
+  return $(document).on("ajax:before", ".toArticle", function(event) {
+    return $('#bodyLoading').show();
+  }).on("ajax:complete", ".toArticle", function(event) {
+    return $('#bodyLoading').hide();
+  });
+});
+
+//記事ローディング
+$(function() {
+  return $(document).on("ajax:before", ".dotlink", function(event) {
+    return $('#articleLoading').show();
+  }).on("ajax:complete", ".dotlink", function(event) {
+    return $('#articleLoading').hide();
+  });
 });

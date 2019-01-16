@@ -7,6 +7,9 @@
 
 <div class="content-wrapper rel">
   <div class="article-body rel"> <%#記事の背景%>
+    <div id="articleLoading" class="abs article-loading-wrapper">
+      <%= image_tag "/img/loading.gif" %>
+    </div>
     <h2 class="title-<%= article.category %> article-title"><%= article.title %></h2> <%#タイトル%>
 
     <%#######記事内容#####################%>
