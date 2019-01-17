@@ -2,7 +2,7 @@ class Figure
   attr_accessor :name, :path, :catchcopy, :job, :birth, :death, :color, :script
 
   def initialize(name, path, catchcopy, job,birth, death, color, script)
-		@name = name
+	@name = name
     @path = path
     @catchcopy = catchcopy
     @job = job
@@ -10,6 +10,6 @@ class Figure
     @death = death
     @color = color
     @script = script
-	end
+  end
 
 end
