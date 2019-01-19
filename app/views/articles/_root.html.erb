@@ -10,7 +10,7 @@
       <p>古今東西の佐賀を知る、歴史できごとマップ</p>
     </div>
 
-      <%= link_to "全体で見る▶︎", filter_path, method: :post, remote: true, class: "all-button" %>
+      <%= link_to "全体でみる▶︎", filter_path, method: :post, remote: true, class: "all-button" %>
 
     <div class="category-wrapper">
       <div class="category rel">
@@ -78,9 +78,8 @@
             <img src="img/top_district.svg" class="abs">
             <%= link_to t("article.region.karamatsu"), filter_path(region: "karamatsu"), method: :post, remote: true, class: "abs" %>
             <ul class="abs">
-              <li>佐賀市</li>
-              <li>小城市</li>
-              <li>多久市</li>
+              <li>唐津市</li>
+              <li>東松浦郡</li>
             </ul>
           </div>
           <div class="district-wrapper">
@@ -119,7 +118,7 @@
       <p>縦にスクロールすると歴史が流れ、<br>
       地図上のポイントをクリックすると右側に「できごと」の詳細が現れます。<br>
       また、上部のメニュー「できごとの分類でみる」からできごとの分類、<br>
-      たとえば「政治」のできごとにしぼって表示することができますし、<br>
+      たとえば「政治」のできごとにしぼって表示することができ、<br>
       「地区別の分類でみる」から自分が住んでいる地域にしぼって表示することもできます。</p>
       <p>自分が住んでいる地域の近くで何が起こっていたのか。<br>
       そしてそのとき佐賀県全体では何が起こっていたのか。<br>
