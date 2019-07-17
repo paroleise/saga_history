@@ -40,6 +40,27 @@ var defaults = {
 };
 Quilljs.setDefaults(defaults)
 
+
+$(function(){
+  $('#list, .nav-left a, .toInfo').click(function(){
+    $('.navigation').css("display","none");
+    $.scrollify.disable();
+    setTimeout(function(){
+      $('footer').removeClass("up-footer");
+  	},1000);
+  })
+
+  $('.toArticle').click(function(){
+    $.scrollify.enable();
+    setTimeout(function(){
+      $('footer').addClass("up-footer");
+      $('.navigation').css("display","block");
+  	},1000);
+
+  })
+});
+
+
 //モーダル閉じる
 $(document).click(function(event) {
   if(!$(event.target).closest('.figure-modal, .figure-image img').length) {
