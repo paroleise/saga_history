@@ -2,7 +2,7 @@
 <% divisions.each_with_index do |division, i| %> <%# 時代ごとに1つのブロックをループ%>
   <% articles_div = articles.where(division: division) %>
   <div class="<%= i % 2 != 0 ? "background_even" : "background_odd"%>">
-    <div class="container-fluid row article rel <%= division %>" id="<%= i + 1 %>">
+    <div class="container-fluid row article rel <%= division %>" >
 
       <%########################↓サイドバーの目盛り##################################################%>
       <div class="scale scale-top abs">
