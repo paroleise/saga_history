@@ -347,7 +347,7 @@ if touchScroll is false - update index
         if(e.keyCode==38 || e.keyCode==33) {
           if(index>0) {
             if(atTop()) {
-              e.preventDefault();
+
               index--;
               //index, instant, callbacks, toTop
               animateScroll(index,false,true,false);
