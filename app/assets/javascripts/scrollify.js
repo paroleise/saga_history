@@ -30,6 +30,7 @@
 if touchScroll is false - update index
 
  */
+ /*
 (function (global,factory) {
   "use strict";
   if (typeof define === 'function' && define.amd) {
@@ -845,3 +846,4 @@ if touchScroll is false - update index
   $.scrollify = scrollify;
   return scrollify;
 }));
+*/
