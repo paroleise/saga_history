@@ -90,7 +90,7 @@
 
 
 // 時代区分のスクロール制御
-  $(function() {
+  var scrolling = function() {
     var current;
     $.scrollify({
       section : ".article, .article-footer",
@@ -130,7 +130,12 @@
           $('.navigation li:first-child').find('.navigation-dot').addClass('active');
       }
     });
-  });
+  }
+
+  //スクロール発動
+  scrolling();
+
+
 
   //記事内スクロールを優先
   $(".allowScroll").hover(

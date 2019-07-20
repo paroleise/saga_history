@@ -21,6 +21,26 @@
 //= require popper
 
 
+//縦長かどうか判断
+var compareWindowAspectRatio = function() {
+  return window.screen.height > window.screen.width
+}
+
+// スマホ画面の横幅と縦幅を取得
+var sizeBackgroundHeight = function() {
+  if (compareWindowAspectRatio()) {
+    $('.district-wrapper img').hide();
+  } else {
+
+  }
+}
+
+
+$(document).ready(function() {
+  sizeBackgroundHeight();
+});
+
+
 
 //wysiwyg設定
 var defaults = {
